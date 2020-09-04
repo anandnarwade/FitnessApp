@@ -1,0 +1,17 @@
+﻿body{
+    background-image:url('images/back.png');
+    font-family:Verdana;
+    font-size:12px;
+}
+.navbar-light .navbar-brand {
+    color: rgb(255, 255, 255);
+}
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link{
+    color: rgb(255, 255, 255);
+}
+.req{
+    color:red;
+}
+.dropdown-item{
+    font-size:12px;
+}
