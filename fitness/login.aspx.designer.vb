@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class login
-
+    
     '''<summary>
     '''form1 control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class login
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
-
+    
     '''<summary>
     '''txtUserId control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class login
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtUserId As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''txtPassword control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class login
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtPassword As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''btnSubmit control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class login
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnSubmit As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''RequiredFieldValidator1 control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class login
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RequiredFieldValidator1 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
+    
     '''<summary>
     '''RequiredFieldValidator2 control.
     '''</summary>
@@ -66,430 +66,115 @@ Partial Public Class login
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RequiredFieldValidator2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
+    
     '''<summary>
-    '''btnRegister control.
+    '''btnGenerat control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnRegister As Global.System.Web.UI.WebControls.Button
-
+    Protected WithEvents btnGenerat As Global.System.Web.UI.WebControls.Button
+    
     '''<summary>
-    '''lblName control.
+    '''txtNewPassword control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblName As Global.System.Web.UI.WebControls.Label
-
+    Protected WithEvents txtNewPassword As Global.System.Web.UI.WebControls.TextBox
+    
     '''<summary>
-    '''RequiredFieldValidator3 control.
+    '''CustomPassword control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator3 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
+    Protected WithEvents CustomPassword As Global.System.Web.UI.WebControls.CustomValidator
+    
     '''<summary>
-    '''txtName control.
+    '''txtConfirmPwd control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtName As Global.System.Web.UI.WebControls.TextBox
-
+    Protected WithEvents txtConfirmPwd As Global.System.Web.UI.WebControls.TextBox
+    
     '''<summary>
-    '''lblEmail control.
+    '''CompareValidator1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblEmail As Global.System.Web.UI.WebControls.Label
-
+    Protected WithEvents CompareValidator1 As Global.System.Web.UI.WebControls.CompareValidator
+    
     '''<summary>
-    '''RequiredFieldValidator4 control.
+    '''btnSubmitPwd control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator4 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
+    Protected WithEvents btnSubmitPwd As Global.System.Web.UI.WebControls.Button
+    
     '''<summary>
-    '''txtEmail control.
+    '''btnCancelPwd control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtEmail As Global.System.Web.UI.WebControls.TextBox
-
+    Protected WithEvents btnCancelPwd As Global.System.Web.UI.WebControls.Button
+    
     '''<summary>
-    '''lblMobile control.
+    '''txtPEmail control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblMobile As Global.System.Web.UI.WebControls.Label
-
+    Protected WithEvents txtPEmail As Global.System.Web.UI.WebControls.TextBox
+    
     '''<summary>
-    '''txtMob control.
+    '''CustomValidator1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtMob As Global.System.Web.UI.WebControls.TextBox
-
+    Protected WithEvents CustomValidator1 As Global.System.Web.UI.WebControls.CustomValidator
+    
     '''<summary>
-    '''lbldob control.
+    '''txtUMobile control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbldob As Global.System.Web.UI.WebControls.Label
-
+    Protected WithEvents txtUMobile As Global.System.Web.UI.WebControls.TextBox
+    
     '''<summary>
-    '''RequiredFieldValidator6 control.
+    '''CustomValidator2 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator6 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
+    Protected WithEvents CustomValidator2 As Global.System.Web.UI.WebControls.CustomValidator
+    
     '''<summary>
-    '''txtDob control.
+    '''btnFilled control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtDob As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Label2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''rdoMale control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents rdoMale As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''lblRdo control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblRdo As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''rdoFemale control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents rdoFemale As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''Label1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''lbllocation control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lbllocation As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''RequiredFieldValidator7 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidator7 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''txtlocation control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtlocation As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''lblCity control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblCity As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''RequiredFieldValidator8 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidator8 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''txtCity control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtCity As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''lblState control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblState As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''RequiredFieldValidator9 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidator9 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''txtState control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtState As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''lblRef control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblRef As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''txtReferene control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtReferene As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''lblType control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblType As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''ddmType control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ddmType As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''lblOrgName control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblOrgName As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''txtOrgName control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtOrgName As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''lblDesignation control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblDesignation As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''txtDesignaton control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtDesignaton As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''lblDept control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblDept As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''txtDept control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtDept As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''lblBuss control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblBuss As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''txtbusiness control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtbusiness As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''lblBusinessname control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblBusinessname As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''txtBusinessname control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtBusinessname As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''lbldailyrou control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lbldailyrou As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''txtDailyRoutine control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtDailyRoutine As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''lblSpoc control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblSpoc As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''txtSpocName control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtSpocName As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''lblspocContact control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblspocContact As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''txtspocContact control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtspocContact As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''btnSubmitRegistration control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnSubmitRegistration As Global.System.Web.UI.WebControls.Button
-
+    Protected WithEvents btnFilled As Global.System.Web.UI.WebControls.Button
+    
     '''<summary>
     '''btnCancel control.
     '''</summary>
@@ -498,7 +183,430 @@ Partial Public Class login
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnCancel As Global.System.Web.UI.WebControls.Button
-
+    
+    '''<summary>
+    '''btnRegister control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnRegister As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''lblName control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblName As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''RequiredFieldValidator3 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RequiredFieldValidator3 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''txtName control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtName As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''lblEmail control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblEmail As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''RequiredFieldValidator4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RequiredFieldValidator4 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''txtEmail control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtEmail As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''lblMobile control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblMobile As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''txtMob control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtMob As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''lbldob control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbldob As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''RequiredFieldValidator6 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RequiredFieldValidator6 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''txtDob control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtDob As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Label2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''rdoMale control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rdoMale As Global.System.Web.UI.WebControls.RadioButton
+    
+    '''<summary>
+    '''lblRdo control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblRdo As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''rdoFemale control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rdoFemale As Global.System.Web.UI.WebControls.RadioButton
+    
+    '''<summary>
+    '''Label1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''lbllocation control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbllocation As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''RequiredFieldValidator7 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RequiredFieldValidator7 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''txtlocation control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtlocation As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''lblCity control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblCity As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''RequiredFieldValidator8 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RequiredFieldValidator8 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''txtCity control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtCity As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''lblState control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblState As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''RequiredFieldValidator9 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RequiredFieldValidator9 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''txtState control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtState As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''lblRef control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblRef As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''txtReferene control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtReferene As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''lblType control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblType As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''ddmType control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddmType As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''lblOrgName control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblOrgName As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''txtOrgName control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtOrgName As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''lblDesignation control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblDesignation As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''txtDesignaton control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtDesignaton As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''lblDept control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblDept As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''txtDept control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtDept As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''lblBuss control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblBuss As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''txtbusiness control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtbusiness As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''lblBusinessname control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblBusinessname As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''txtBusinessname control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtBusinessname As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''lbldailyrou control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbldailyrou As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''txtDailyRoutine control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtDailyRoutine As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''lblSpoc control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblSpoc As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''txtSpocName control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtSpocName As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''lblspocContact control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblspocContact As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''txtspocContact control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtspocContact As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''btnSubmitRegistration control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnSubmitRegistration As Global.System.Web.UI.WebControls.Button
+    
     '''<summary>
     '''RequiredFieldValidator5 control.
     '''</summary>

@@ -160,6 +160,7 @@
     <Content Include="images\cool-background.png" />
     <Content Include="login.aspx" />
     <Content Include="MembersFrm.aspx" />
+    <Content Include="MembersListFrm.aspx" />
     <Content Include="Par-q-and-you.aspx" />
     <Content Include="printV115.aspx" />
     <Content Include="printv126.aspx" />
@@ -316,6 +317,13 @@
     </Compile>
     <Compile Include="MembersFrm.aspx.vb">
       <DependentUpon>MembersFrm.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="MembersListFrm.aspx.designer.vb">
+      <DependentUpon>MembersListFrm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MembersListFrm.aspx.vb">
+      <DependentUpon>MembersListFrm.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />

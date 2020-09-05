@@ -65,17 +65,110 @@
            
         </nav>
         <div class="container-fluid mt-5" style="background-image:url('banner/slider4.jpg'); background-repeat: no-repeat;  background-size: 1500px 500px; min-height:500px; margin-left:40px;">
-            <% If (Not registerMode) Then %>
+          
         
-            <div style="text-align: center; padding-top:20px; display:none;">
-                <h1> <b class="bg-warning">Your stuff here!</b> </h1>
+            <div style="text-align: right; padding-top:20px; margin-right:100px">
+                  <% If (Not registerMode) Then %>
+                <div class="row text-right">
+                    <div class="col-sm-6"></div>
+                    <div class="col-sm-6">
+                        <h3> <b class="bg-warning">Have you received portal access Email</b> </h3>
+                        <br />
+                        <asp:Button ID="btnGenerat" runat="server" CssClass="btn btn-info" Text="Click Here" OnClick="btnGenerat_Click"  />
+                    </div>
+                    
+                </div>
+
+                 <% Else %>
+
+                    <% If (emailMobileVerified) Then %>
+                        <div class="row text-left" style="margin-top:50px;">
+                            <div class="col-sm-8"></div>
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <div class="card-header bg-warning">
+                                        <h5>Create Password</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <div><b>Enter Password</b></div>
+                                            <div>
+                                                <asp:TextBox ID="txtNewPassword" runat="server" CssClass="form-control form-control-sm" TextMode="Password" ValidationGroup="NewPwd" ></asp:TextBox>
+                                                <asp:CustomValidator ID="CustomPassword" SetFocusOnError="true" ControlToValidate="txtNewPassword" ValidateEmptyText="true" ValidationGroup="NewPwd" ForeColor="Red" runat="server" ErrorMessage="" OnServerValidate="CustomPassword_ServerValidate" ></asp:CustomValidator>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div><b>Confirm Password</b></div>
+                                            <div>
+                                                 <asp:TextBox ID="txtConfirmPwd" runat="server" CssClass="form-control form-control-sm" TextMode="Password" ValidationGroup="NewPwd" ></asp:TextBox>
+                                                <asp:CompareValidator ID="CompareValidator1" ControlToValidate="txtConfirmPwd" ControlToCompare="txtNewPassword" SetFocusOnError="true" ForeColor="Red" runat="server" ValidationGroup="NewPwd" ErrorMessage="Password not match!"></asp:CompareValidator>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <asp:Button ID="btnSubmitPwd" CssClass="btn btn-info btn-block" ValidationGroup="NewPwd"  runat="server" Text="Submit" OnClick="btnSubmitPwd_Click"  />
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <asp:Button ID="btnCancelPwd" runat="server" Text="Cancel" CausesValidation="false" CssClass="btn btn-danger btn-block" OnClick="btnCancel_Click" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                      <% Else %>
+                        
+                <div class="row text-left" style="margin-top:50px;">
+                    <div class="col-sm-8"></div>
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-header bg-warning">
+                                <h5>Filled below form for access</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <div><b>Email</b></div>
+                                    <div>
+                                        <asp:TextBox ID="txtPEmail" ValidationGroup="access" TextMode="Email" placeholder="Enter your email" Font-Size="12px" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator10" ValidationGroup="access" ControlToValidate="txtPEmail" ForeColor="Red" SetFocusOnError="true" runat="server" ErrorMessage="Email is required"></asp:RequiredFieldValidator>--%>
+                                        <asp:CustomValidator ID="CustomValidator1" ValidationGroup="access" SetFocusOnError="true" ValidateEmptyText="true" ForeColor="Red" OnServerValidate="CustomValidator1_ServerValidate"  ControlToValidate="txtPEmail" runat="server" ErrorMessage="Email not found!"></asp:CustomValidator>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div><b>Mobile</b></div>
+                                    <div>
+                                        <asp:TextBox ID="txtUMobile" ValidationGroup="access" ClientIDMode="Static" MaxLength="10"  placeholder="Enter your Mobile" Font-Size="12px" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <asp:CustomValidator ID="CustomValidator2" ControlToValidate="txtUMobile" SetFocusOnError="true" ForeColor="Red" ValidationGroup="access" ValidateEmptyText="true" OnServerValidate="CustomValidator2_ServerValidate"   runat="server" ErrorMessage=""></asp:CustomValidator>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <asp:Button ID="btnFilled" runat="server" ValidationGroup="access" CssClass="btn btn-info btn-block" Text="Submit" OnClick="btnFilled_Click"  />
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <asp:Button ID="btnCancel" runat="server" CausesValidation="false"  class="btn btn-danger btn-block" OnClick="btnCancel_Click" Text="Cancel" ></asp:Button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                      <% End If %>
+                
+                <% End If %>
+
             </div>
-            <div class="text-center" style="display:none;">
-                <asp:Button ID="btnRegister" CausesValidation="false" runat="server" CssClass="btn btn-primary btn-lg mr-2" Text="Register" OnClick="btnRegister_Click"  />
+            <div class="text-right" style="margin-right:150px; display:none" >
+                <asp:Button ID="btnRegister" CausesValidation="false" Visible="false" runat="server" CssClass="btn btn-primary btn-lg mr-2" Text="Register" OnClick="btnRegister_Click"  />
                 <button type="button" class="btn btn-info btn-lg">Learn More</button>
             </div>
        
-        <% Else %>
+       
             <div class="container" style="display:none;">
                  <div style="text-align: center;">
                 <h3>Register Here! </h3>
@@ -241,14 +334,14 @@
 
                     <div class="text-center mt-5">
                         <asp:Button ID="btnSubmitRegistration" ValidationGroup="registration" runat="server" CssClass="btn btn-info btn-lg mr-2" Text="Register" OnClick="btnSubmitRegistration_Click"  />
-                        <asp:Button ID="btnCancel" runat="server" CausesValidation="false"  class="btn btn-danger btn-lg" OnClick="btnCancel_Click" Text="Cancel" ></asp:Button>
+                        
                         <br />
                             <asp:RequiredFieldValidator ValidationGroup="registration" ControlToValidate="txtMob" Font-Size="12px" ForeColor="Red" SetFocusOnError="true" ID="RequiredFieldValidator5" runat="server" ErrorMessage="Mob is required"></asp:RequiredFieldValidator>                   
                        
                     </div>
                 </div>
             </div>
-        <% End If %>
+        
         </div>
         
     </form>
@@ -302,6 +395,19 @@
             alert("It is not valid mobile number.input 10 digits number!");
             return false;
         }
+
+        $("#txtUMobile").keydown(function (event) {
+            // Allow only backspace and delete
+            if (event.keyCode == 46 || event.keyCode == 8) {
+                // let it happen, don't do anything
+            }
+            else {
+                // Ensure that it is a number and stop the keypress
+                if (event.keyCode < 48 || event.keyCode > 57) {
+                    event.preventDefault();
+                }
+            }
+        });
     </script>
 </body>
 </html>

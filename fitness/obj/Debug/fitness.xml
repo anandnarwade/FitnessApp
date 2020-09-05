@@ -222,6 +222,123 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:fitness.login._btnGenerat">
+<summary>
+btnGenerat control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.login._txtNewPassword">
+<summary>
+txtNewPassword control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.login._CustomPassword">
+<summary>
+CustomPassword control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.login._txtConfirmPwd">
+<summary>
+txtConfirmPwd control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.login._CompareValidator1">
+<summary>
+CompareValidator1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.login._btnSubmitPwd">
+<summary>
+btnSubmitPwd control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.login._btnCancelPwd">
+<summary>
+btnCancelPwd control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.login._txtPEmail">
+<summary>
+txtPEmail control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.login._CustomValidator1">
+<summary>
+CustomValidator1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.login._txtUMobile">
+<summary>
+txtUMobile control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.login._CustomValidator2">
+<summary>
+CustomValidator2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.login._btnFilled">
+<summary>
+btnFilled control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.login._btnCancel">
+<summary>
+btnCancel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:fitness.login._btnRegister">
 <summary>
 btnRegister control.
@@ -645,15 +762,6 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:fitness.login._btnCancel">
-<summary>
-btnCancel control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
 <member name="F:fitness.login._RequiredFieldValidator5">
 <summary>
 RequiredFieldValidator5 control.
@@ -702,6 +810,24 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:fitness.MembersFrm._btnSubmit">
 <summary>
 btnSubmit control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.MembersListFrm._btnGenerate">
+<summary>
+btnGenerate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.MembersListFrm._GridMembersList">
+<summary>
+GridMembersList control.
 </summary>
 <remarks>
 Auto-generated field.

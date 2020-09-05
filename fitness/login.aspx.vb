@@ -8,6 +8,8 @@ Public Class login
     Dim conStr As String = ConfigurationManager.ConnectionStrings("connStr").ConnectionString
     Dim con As New SqlConnection(conStr)
     Public Shared registerMode As Boolean = False
+    Public Shared emailMobileVerified As Boolean = False
+    Dim _generic As New GenericClass
 
 
 
@@ -16,7 +18,7 @@ Public Class login
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
         If (Not IsPostBack) Then
-
+            ' _generic.SendEmail("anand.narwade11@gmail.com")
         End If
 
     End Sub
@@ -107,7 +109,9 @@ Public Class login
     End Sub
 
     Protected Sub btnCancel_Click(sender As Object, e As EventArgs)
-        Me.registerMode = Not registerMode
+        Me.registerMode = False
+        Me.emailMobileVerified = False
+
     End Sub
 
     Protected Sub ddmType_SelectedIndexChanged(sender As Object, e As EventArgs)
@@ -116,5 +120,148 @@ Public Class login
         'if corporate- spoc name, contact no
 
 
+    End Sub
+
+    Protected Sub btnGenerat_Click(sender As Object, e As EventArgs)
+        Me.registerMode = True
+    End Sub
+
+    Protected Sub btnFilled_Click(sender As Object, e As EventArgs)
+        If (Page.IsValid) Then
+            Dim _email As String = txtPEmail.Text
+            Dim _mobile As String = txtUMobile.Text
+
+            Session("Email") = _email
+
+            emailMobileVerified = True
+            ' registerMode = False
+
+        End If
+    End Sub
+
+    Protected Sub CustomValidator1_ServerValidate(source As Object, args As ServerValidateEventArgs)
+        If (args.Value.Count > 0) Then
+            Dim _email As String = args.Value.ToString()
+
+            Dim sqlCmd As New SqlCommand
+            sqlCmd.CommandText = "Select * From CustomerMaster where email = @email and mobile = @mobile and IsRegister != 1"
+            sqlCmd.Parameters.AddWithValue("@email", _email)
+            sqlCmd.Parameters.AddWithValue("@mobile", txtUMobile.Text)
+
+            Dim res As Boolean = _generic._IsExistsFromCMD(sqlCmd)
+            If (res) Then
+
+                args.IsValid = True
+
+            Else
+                CustomValidator1.ErrorMessage = "email not found!"
+                args.IsValid = False
+            End If
+        Else
+            CustomValidator1.ErrorMessage = "Please enter email address!"
+            args.IsValid = False
+
+        End If
+
+    End Sub
+
+    Protected Sub CustomValidator2_ServerValidate(source As Object, args As ServerValidateEventArgs)
+        'MobileNoValidations
+        If (args.Value.Count = 10) Then
+            Dim _mobile As String = args.Value
+
+            Dim sqlCmd As New SqlCommand
+            sqlCmd.CommandText = "Select * From CustomerMaster where mobile = @mobile and email = @email and IsRegister != 1"
+            sqlCmd.Parameters.AddWithValue("@mobile", _mobile)
+            sqlCmd.Parameters.AddWithValue("@email", txtPEmail.Text)
+
+            Dim res As Boolean = _generic._IsExistsFromCMD(sqlCmd)
+            If (res) Then
+
+                args.IsValid = True
+
+            Else
+                CustomValidator2.ErrorMessage = "mobile no. not found!"
+                args.IsValid = False
+            End If
+
+        Else
+            CustomValidator2.ErrorMessage = "Enter 10 digit mobile no."
+            args.IsValid = False
+        End If
+    End Sub
+
+    Protected Sub CustomPassword_ServerValidate(source As Object, args As ServerValidateEventArgs)
+        If (args.Value.Count > 8) Then
+            Dim _password As String = args.Value
+            Dim _Validate As Boolean = ValidatePassword(_password)
+            If (_Validate) Then
+                args.IsValid = True
+            Else
+                CustomPassword.ErrorMessage = "password is combination of 2 number, 2 Uppercase, 2 LowerCase, 2 SpecialChar"
+                args.IsValid = False
+            End If
+
+        Else
+            CustomPassword.ErrorMessage = "password should be 8 char long"
+            args.IsValid = False
+        End If
+    End Sub
+
+    Function ValidatePassword(ByVal pwd As String,
+    Optional ByVal minLength As Integer = 8,
+    Optional ByVal numUpper As Integer = 2,
+    Optional ByVal numLower As Integer = 2,
+    Optional ByVal numNumbers As Integer = 2,
+    Optional ByVal numSpecial As Integer = 2) As Boolean
+
+        ' Replace [A-Z] with \p{Lu}, to allow for Unicode uppercase letters.
+        Dim upper As New System.Text.RegularExpressions.Regex("[A-Z]")
+        Dim lower As New System.Text.RegularExpressions.Regex("[a-z]")
+        Dim number As New System.Text.RegularExpressions.Regex("[0-9]")
+        ' Special is "none of the above".
+        Dim special As New System.Text.RegularExpressions.Regex("[^a-zA-Z0-9]")
+
+        ' Check the length.
+        If Len(pwd) < minLength Then Return False
+        ' Check for minimum number of occurrences.
+        If upper.Matches(pwd).Count < numUpper Then Return False
+        If lower.Matches(pwd).Count < numLower Then Return False
+        If number.Matches(pwd).Count < numNumbers Then Return False
+        If special.Matches(pwd).Count < numSpecial Then Return False
+
+        ' Passed all checks.
+        Return True
+    End Function
+
+    Protected Sub btnSubmitPwd_Click(sender As Object, e As EventArgs)
+        If (Page.IsValid) Then
+            If (Session("Email") <> "") Then
+
+                Dim pwdSave As Boolean = False
+                Dim IsReg As Boolean = False
+                Dim sqlCmdPwd As New SqlCommand
+                sqlCmdPwd.CommandText = "INSERT INTO PasswordMaster VALUES(@email, @pwd, 1)"
+                sqlCmdPwd.CommandType = CommandType.Text
+
+                sqlCmdPwd.Parameters.AddWithValue("@email", Session("Email").ToString())
+                sqlCmdPwd.Parameters.AddWithValue("@pwd", txtNewPassword.Text)
+
+                pwdSave = _generic.SaveDataFromCmd(sqlCmdPwd)
+
+
+                Dim SqlResCmd As New SqlCommand
+                SqlResCmd.CommandText = "UPDATE CustomerMaster SET IsRegister = 1 WHERE email = @email"
+                SqlResCmd.Parameters.AddWithValue("@email", Session("Email").ToString())
+
+                IsReg = _generic.SaveDataFromCmd(SqlResCmd)
+
+                ClientScript.RegisterStartupScript(Me.[GetType](), "alert", "<script>alert('Registration Success!');</script>", True)
+                registerMode = False
+                emailMobileVerified = False
+                ' Response.Redirect("Login.aspx")
+
+            End If
+        End If
     End Sub
 End Class
