@@ -6,9 +6,10 @@
         <div class="row" style="padding-left:20px;">
             <div class="col-sm-9">
                  <h3>Members List</h3>
+                <asp:Label ID="lblMessage" runat="server" Font-Size="14px"></asp:Label>
             </div>
             <div class="col-sm-3">
-                <asp:Button ID="btnGenerate" runat="server" Text="Generate and Send Link" CssClass="btn btn-warning" />
+                <asp:Button ID="btnGenerate" runat="server" Text="Generate and Send Link" CssClass="btn btn-warning" OnClick="btnGenerate_Click"  />
             </div>
            
         </div>
@@ -21,4 +22,13 @@
             </asp:GridView>
         </div>
     </div>
+
+    <script type="text/javascript">
+            function HideLabel() {
+        var seconds = 5;
+        setTimeout(function () {
+            document.getElementById("<%=lblMessage.ClientID %>").style.display = "none";
+        }, seconds * 1000);
+    };
+    </script>
 </asp:Content>

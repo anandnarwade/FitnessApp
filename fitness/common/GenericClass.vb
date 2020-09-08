@@ -130,31 +130,41 @@ Public Class GenericClass
 
 
     Public Sub SendEmail(ByVal recivermail As String)
-        'Dim _mail As New MailMessage()
-        '_mail.Subject = "Access created"
-        '_mail.From = New MailAddress("mail.duedate@gmail.com")
-        '_mail.To.Add(recivermail)
-        '_mail.Body = "<div style='width:100%; font-family:'verdana';, font-size:12px;'><p>Dear User, <br/> your access has been created in fitness app portal. <br/> Below is the portal URL Kindly setup your account.<p> <br/> <br/> URL : '" & portalUrl & "' </div>"
-        '_mail.IsBodyHtml = True
-        'Dim smtp As New SmtpClient()
-        'smtp.Host = "smtp.gmail.com"
-        'smtp.Port = "587"
-        'smtp.EnableSsl = True
-        'Dim netCre As New NetworkCredential("mail.duedate@gmail.com", "mail.due")
-        'smtp.UseDefaultCredentials = False
-        'smtp.Credentials = netCre
 
-        'Try
-        '    smtp.Send(_mail)
-        'Catch ex As Exception
-
-        'End Try
 
         Dim _msg As New MailMessage()
         Dim _client As New SmtpClient()
         Try
             _msg.Subject = "Access Created in Fitness app portal"
             _msg.Body = "<div style='width:100%; font-family:'verdana';, font-size:12px;'><p>Dear User, <br/> your access has been created in fitness app portal. <br/> Below is the portal URL Kindly setup your account.<p> <br/> <br/> URL : '" & portalUrl & "' </div>"
+            _msg.From = New MailAddress("mail.duedate@gmail.com")
+            _msg.To.Add(recivermail)
+            _msg.IsBodyHtml = True
+            _client.Host = "smtp.gmail.com"
+            Dim basicauthenticationinfo As New NetworkCredential("mail.duedate@gmail.com", "mail.due")
+            _client.Port = Integer.Parse("587")
+            _client.EnableSsl = True
+            _client.UseDefaultCredentials = False
+            _client.Credentials = basicauthenticationinfo
+            _client.DeliveryMethod = SmtpDeliveryMethod.Network
+            _client.Send(_msg)
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+    End Sub
+
+
+
+    Public Sub SendOTPOnEmail(ByVal recivermail As String, ByVal OTP As String)
+
+
+        Dim _msg As New MailMessage()
+        Dim _client As New SmtpClient()
+        Try
+            _msg.Subject = "Access Created in Fitness app portal"
+            _msg.Body = "<div style='width:100%; font-family:'verdana';, font-size:12px;'><p>Dear User, <br/> OTP for fitness app portal : <b>'" & OTP & "'</b> <br/> <p>   </div>"
             _msg.From = New MailAddress("mail.duedate@gmail.com")
             _msg.To.Add(recivermail)
             _msg.IsBodyHtml = True

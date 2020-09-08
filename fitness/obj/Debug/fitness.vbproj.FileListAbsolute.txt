@@ -125,4 +125,17 @@ C:\Users\E7M93BF\Documents\Custome\fitness-master\fitness-master\fitness\obj\Deb
 C:\Users\E7M93BF\Documents\Custome\fitness-master\fitness-master\fitness\obj\Debug\fitness.dll
 C:\Users\E7M93BF\Documents\Custome\fitness-master\fitness-master\fitness\obj\Debug\fitness.xml
 C:\Users\E7M93BF\Documents\Custome\fitness-master\fitness-master\fitness\obj\Debug\fitness.pdb
+C:\Users\E7M93BF\Documents\Custome\fitness-master\fitness-master\fitness\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\E7M93BF\Documents\Custome\fitness-master\fitness-master\fitness\bin\System.Web.Helpers.dll
+C:\Users\E7M93BF\Documents\Custome\fitness-master\fitness-master\fitness\bin\System.Web.Mvc.dll
+C:\Users\E7M93BF\Documents\Custome\fitness-master\fitness-master\fitness\bin\System.Web.Razor.dll
+C:\Users\E7M93BF\Documents\Custome\fitness-master\fitness-master\fitness\bin\System.Web.WebPages.Deployment.dll
+C:\Users\E7M93BF\Documents\Custome\fitness-master\fitness-master\fitness\bin\System.Web.WebPages.dll
+C:\Users\E7M93BF\Documents\Custome\fitness-master\fitness-master\fitness\bin\System.Web.WebPages.Razor.dll
+C:\Users\E7M93BF\Documents\Custome\fitness-master\fitness-master\fitness\bin\System.Web.Helpers.xml
+C:\Users\E7M93BF\Documents\Custome\fitness-master\fitness-master\fitness\bin\System.Web.Mvc.xml
+C:\Users\E7M93BF\Documents\Custome\fitness-master\fitness-master\fitness\bin\System.Web.Razor.xml
+C:\Users\E7M93BF\Documents\Custome\fitness-master\fitness-master\fitness\bin\System.Web.WebPages.xml
+C:\Users\E7M93BF\Documents\Custome\fitness-master\fitness-master\fitness\bin\System.Web.WebPages.Deployment.xml
+C:\Users\E7M93BF\Documents\Custome\fitness-master\fitness-master\fitness\bin\System.Web.WebPages.Razor.xml
 C:\Users\E7M93BF\Documents\Custome\fitness-master\fitness-master\fitness\obj\Debug\fitness.vbprojResolveAssemblyReference.cache

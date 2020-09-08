@@ -143,6 +143,20 @@
                                         <asp:CustomValidator ID="CustomValidator2" ControlToValidate="txtUMobile" SetFocusOnError="true" ForeColor="Red" ValidationGroup="access" ValidateEmptyText="true" OnServerValidate="CustomValidator2_ServerValidate"   runat="server" ErrorMessage=""></asp:CustomValidator>
                                     </div>
                                 </div>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div>OTP</div>
+                                        <div>
+                                            <asp:TextBox ID="txtOTP" ValidationGroup="access" runat="server" CssClass="form-control form-control-sm"></asp:TextBox>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <span></span><br />
+                                        <asp:Button ID="txtSentOTP" ValidationGroup="access" runat="server" CssClass="btn btn-sm btn-primary" Text="Sent OTP" OnClick="txtSentOTP_Click"  ></asp:Button>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <asp:Button ID="btnFilled" runat="server" ValidationGroup="access" CssClass="btn btn-info btn-block" Text="Submit" OnClick="btnFilled_Click"  />
@@ -343,7 +357,7 @@
             </div>
         
         </div>
-        
+        <asp:HiddenField ID="hiddenOTP" runat="server" />
     </form>
 
     <script type="text/javascript">

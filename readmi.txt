@@ -1,0 +1,9 @@
+ 1) Email, mobile GenerateOTP(validate email, mobile) if (OK) then sent OTP->  OTP -> (Email, SMS) - > after validating OTP -> Create Password(Password Policy displayed) -> Registered done(msg : New password set successfully. Please login with your registered email id & pwd)
+
+ 2) Administration tab to be visible only Admin
+
+ 3) Forgot Password (Use existing reg. page)
+
+ 4) Password change under user login
+
+ 5) Add edit, delete(with confirmation) option for all forms

@@ -11,10 +11,6 @@ Public Class login
     Public Shared emailMobileVerified As Boolean = False
     Dim _generic As New GenericClass
 
-
-
-
-
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
         If (Not IsPostBack) Then
@@ -264,4 +260,38 @@ Public Class login
             End If
         End If
     End Sub
+
+
+
+    Private Function GenerateOTP(sender As Object, e As EventArgs) As String
+        Dim alphabets As String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        Dim small_alphabets As String = "abcdefghijklmnopqrstuvwxyz"
+        Dim numbers As String = "1234567890"
+
+        Dim characters As String = numbers
+        'If rbType.SelectedItem.Value = "1" Then
+        '    characters += Convert.ToString(alphabets & small_alphabets) & numbers
+        'End If
+        ' Dim length As Integer = Integer.Parse(ddlLength.SelectedItem.Value)
+        Dim length As Integer = 4
+        Dim otp As String = String.Empty
+        For i As Integer = 0 To length - 1
+            Dim character As String = String.Empty
+            Do
+                Dim index As Integer = New Random().Next(0, characters.Length)
+                character = characters.ToCharArray()(index).ToString()
+            Loop While otp.IndexOf(character) <> -1
+            otp += character
+        Next
+        'lblOTP.Text = otp
+        Return otp
+    End Function
+
+    Protected Sub txtSentOTP_Click(sender As Object, e As EventArgs)
+        If (Page.IsValid) Then
+            hiddenOTP.Value = GenerateOTP(Nothing, Nothing)
+            _generic.SendOTPOnEmail(txtPEmail.Text, hiddenOTP.Value)
+        End If
+    End Sub
+
 End Class
