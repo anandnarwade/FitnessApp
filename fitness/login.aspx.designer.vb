@@ -185,6 +185,15 @@ Partial Public Class login
     Protected WithEvents txtSentOTP As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
+    '''lblOtpMsg control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblOtpMsg As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''btnFilled control.
     '''</summary>
     '''<remarks>

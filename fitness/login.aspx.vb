@@ -124,12 +124,21 @@ Public Class login
 
     Protected Sub btnFilled_Click(sender As Object, e As EventArgs)
         If (Page.IsValid) Then
-            Dim _email As String = txtPEmail.Text
-            Dim _mobile As String = txtUMobile.Text
 
-            Session("Email") = _email
+            If (hiddenOTP.Value = txtOTP.Text) Then
 
-            emailMobileVerified = True
+                Dim _email As String = txtPEmail.Text
+                Dim _mobile As String = txtUMobile.Text
+                Session("Email") = _email
+
+                emailMobileVerified = True
+            Else
+
+                lblEmail.Text = "Invalid OTP"
+            End If
+
+
+
             ' registerMode = False
 
         End If

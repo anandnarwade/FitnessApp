@@ -155,8 +155,12 @@
                                     <div class="col-sm-6">
                                         <span></span><br />
                                         <asp:Button ID="txtSentOTP" ValidationGroup="access" runat="server" CssClass="btn btn-sm btn-primary" Text="Sent OTP" OnClick="txtSentOTP_Click"  ></asp:Button>
+                                        <asp:Label ID="lblOtpMsg" runat="server" ForeColor="Red"></asp:Label>
                                     </div>
                                 </div>
+
+                                <br />
+
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <asp:Button ID="btnFilled" runat="server" ValidationGroup="access" CssClass="btn btn-info btn-block" Text="Submit" OnClick="btnFilled_Click"  />

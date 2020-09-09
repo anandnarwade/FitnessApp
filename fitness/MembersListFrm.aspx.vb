@@ -16,7 +16,7 @@ Public Class MembersListFrm
 
     Private Sub BindGrid()
         Dim constr As String = ConfigurationManager.ConnectionStrings("connStr").ConnectionString
-        Dim query As String = "Select  name as [Name], email as [Email], mobile as [Mobile], IsRegister from CustomerMaster order by id desc"
+        Dim query As String = "Select  name as [Name], email as [Email], mobile as [Mobile], SendCredMail ,IsRegister,  from CustomerMaster order by id desc"
         Using con As SqlConnection = New SqlConnection(constr)
             Using sda As SqlDataAdapter = New SqlDataAdapter(query, con)
                 Using dt As DataTable = New DataTable()
@@ -32,7 +32,7 @@ Public Class MembersListFrm
         Dim constr As String = ConfigurationManager.ConnectionStrings("connStr").ConnectionString
         Dim _email As String = Nothing
         Using con As New SqlConnection(constr)
-            Using cmd As New SqlCommand("SElect email from CustomerMaster where IsRegister = 0")
+            Using cmd As New SqlCommand("SElect email from CustomerMaster where  SendCredMail is null")
                 cmd.Connection = con
                 con.Open()
                 Dim sdr As SqlDataReader = cmd.ExecuteReader()
@@ -47,6 +47,7 @@ Public Class MembersListFrm
                         _email = sdr("email").ToString()
                         If (_email <> "") Then
                             _generic.SendEmail(_email)
+                            _generic.SaveData("UPDATE CustomerMaster SET SendCredMail = 1 WHERE email = '" & _email & "'")
                         End If
                     End While
                 End If

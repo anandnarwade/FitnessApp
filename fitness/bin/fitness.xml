@@ -339,6 +339,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:fitness.login._lblOtpMsg">
+<summary>
+lblOtpMsg control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:fitness.login._btnFilled">
 <summary>
 btnFilled control.
@@ -1183,6 +1192,249 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:fitness.print169._form1">
 <summary>
 form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._lblName">
+<summary>
+lblName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtHRDate">
+<summary>
+txtHRDate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtRestHr">
+<summary>
+txtRestHr control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtExeHR">
+<summary>
+txtExeHR control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtBpDate">
+<summary>
+txtBpDate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtRestingBP">
+<summary>
+txtRestingBP control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtWeightIB">
+<summary>
+txtWeightIB control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtHeightIN">
+<summary>
+txtHeightIN control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtWeightkg">
+<summary>
+txtWeightkg control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtHeightm">
+<summary>
+txtHeightm control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtBCADate">
+<summary>
+txtBCADate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtBMI">
+<summary>
+txtBMI control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtSKMDate">
+<summary>
+txtSKMDate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtMenCest">
+<summary>
+txtMenCest control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtWomenTriceps">
+<summary>
+txtWomenTriceps control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtMenAbdomen">
+<summary>
+txtMenAbdomen control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtWomenSuprailium">
+<summary>
+txtWomenSuprailium control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtMenThigh">
+<summary>
+txtMenThigh control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtWomenThigh">
+<summary>
+txtWomenThigh control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtMenTotal">
+<summary>
+txtMenTotal control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtWomenTotal">
+<summary>
+txtWomenTotal control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtfatBodyEstimation">
+<summary>
+txtfatBodyEstimation control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtGMDate">
+<summary>
+txtGMDate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtAbdomen">
+<summary>
+txtAbdomen control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtHip">
+<summary>
+txtHip control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtWaist">
+<summary>
+txtWaist control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.print169._txtRaioWH">
+<summary>
+txtRaioWH control.
 </summary>
 <remarks>
 Auto-generated field.
