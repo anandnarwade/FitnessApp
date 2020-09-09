@@ -10,9 +10,28 @@
     <link href="Content/font-awesome.css" rel="stylesheet" />
 <link href="Content/themes/base/jquery-ui.css" rel="stylesheet" />
     <link href="Content/site.css" rel="stylesheet" />
+
+    <link href="Content/DataTables/css/dataTables.bootstrap4.css" rel="stylesheet" />
     <script src="Scripts/jquery-3.0.0.js"></script>
 <script src="Scripts/jquery-ui-1.12.1.js"></script>
     <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/DataTables/jquery.dataTables.js"></script>
+<script src="Scripts/DataTables/dataTables.bootstrap4.js"></script>
+<script src="Scripts/bootbox.js"></script>
+
+    <style>
+        .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+    color: rgba(0, 0, 0, 0.7);
+    background-color: white;
+}
+
+        .dropdown-item:hover, .dropdown-item:focus {
+    color: #16181b;
+    text-decoration: none;
+    background-color: gainsboro;
+}
+
+    </style>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -36,10 +55,10 @@
               <a class="nav-link" href="home.aspx"> <i class="fa fa-address-card"></i> Customers</a>
         </li>--%>
       <li class="nav-item dropdown">
-        
+ 
       </li>
 
-        <% If (Session("IsAdmin") = True) Then %>
+        <% If (Session("Admin").ToString() = "Y") Then %>
 
          <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -105,5 +124,8 @@
             
         </div>
     </form>
+    <script type="text/javascript">
+        $('.table').dataTable();
+    </script>
 </body>
 </html>

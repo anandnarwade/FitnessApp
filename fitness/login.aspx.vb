@@ -48,9 +48,9 @@ Public Class login
                 Dim IsAdmin As Boolean = _generic._IsExists("Select IsAdmin from CustomerMaster where email = '" & txtUserId.Text & "'")
 
                 If (IsAdmin) Then
-                    Session("Admin") = True
+                    Session("Admin") = "Y"
                 Else
-                    Session("Admin") = False
+                    Session("Admin") = "N"
                 End If
 
                 Response.Redirect("home.aspx")
@@ -271,7 +271,10 @@ Public Class login
 
                 IsReg = _generic.SaveDataFromCmd(SqlResCmd)
 
-                ClientScript.RegisterStartupScript(Me.[GetType](), "alert", "<script>alert('Registration Success!');</script>", True)
+                'ClientScript.RegisterStartupScript(Me.[GetType](), "alert", "<script>alert('Registration Success!');</script>", True)
+                msg.Visible = True
+
+                'lblMessage.Text = "Registration Success!"
                 registerMode = False
                 emailMobileVerified = False
                 ' Response.Redirect("Login.aspx")
@@ -313,5 +316,6 @@ Public Class login
 
         End If
     End Sub
+
 
 End Class

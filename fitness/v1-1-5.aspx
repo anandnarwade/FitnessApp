@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/fit.Master" CodeBehind="v1-1-5.aspx.vb" Inherits="fitness.v1_1_5" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div  style="border:1px solid #cecece; background-color:white; border-radius:5px; padding:10px; margin-top:10px;">
@@ -9,14 +11,21 @@
                 <asp:Label ID="lblMessage" runat="server" CssClass="badge badge-danger"></asp:Label>
             </div>
             <div class="col-sm-2">
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">form</button>
+             <%-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">form</button>--%>
+
+                <asp:Button ID="btnNew" runat="server" CssClass="btn btn-primary" Text="Form" OnClick="btnNew_Click"  />
             </div>
         </div>
         <hr />
         <div class="row" style="padding-left:50px;">
-
-            <asp:GridView ID="GridV115" AutoGenerateColumns="false" CssClass="table table-bordered table-sm" runat="server">
+            <div class="col-sm-12">
+                <asp:GridView ID="GridV115" ClientIDMode="Static" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-sm" style="width:100%;" runat="server">
                 <Columns>
+                    <asp:TemplateField HeaderText="Sr.No">
+                        <ItemTemplate>
+                            <%# Container.DataItemIndex + 1 %>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                     <asp:TemplateField HeaderText="Name">
                         <ItemTemplate>
                             <asp:Label ID="Label1" runat="server" Visible="false" Text='<%#Eval("id") %>'></asp:Label>
@@ -28,11 +37,19 @@
                     <asp:BoundField DataField="createdon" HeaderText="Submited On" />
                     <asp:TemplateField HeaderText="Print">
                         <ItemTemplate>
-                            <asp:LinkButton ID="lnkPrint" ToolTip="click to print"  CommandArgument='<%#Eval("id") %>' runat="server" OnClick="lnkPrint_Click"  > <i class="fa fa-print"></i> </asp:LinkButton>
+                            <asp:LinkButton ID="lnkPrint" ToolTip="click to print"  CommandArgument='<%#Eval("id") %>' runat="server" OnClick="lnkPrint_Click"  > <i class="fa fa-print"></i> </asp:LinkButton> ||
+                            
+                           <asp:LinkButton ID="lnkEdit" CommandArgument='<%#Eval("id") %>' runat="server" OnClick="lnkEdit_Click" ToolTip="Click to edit" ><i class="fa fa-edit"></i></asp:LinkButton> ||
+
+                            <a href="#" class="del" style="color:red" data-val='<%#Eval("id") %>' title="click to delete" ><i class="fa fa-trash"></i></a>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
+
+            </div>
+
+            
 
         </div>
     </div>
@@ -92,6 +109,7 @@
       </div>
         <div class="modal-footer">
         <%--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>--%>
+            <asp:Button ID="btnUpdate" runat="server" CssClass="btn btn-warning" Text="UPDATE" OnClick="btnUpdate_Click"  />
             <asp:Button ID="btnSubmit" CssClass="btn btn-primary" runat="server" Text="SAVE" OnClick="btnSubmit_Click"  />
         
       </div>
@@ -99,7 +117,7 @@
     </div>
   </div>
 </div>
-
+    <asp:HiddenField ID="HiddenTrId" runat="server" />
 
     <script type="text/javascript">
     function HideLabel() {
@@ -108,6 +126,67 @@
             document.getElementById("<%=lblMessage.ClientID %>").style.display = "none";
         }, seconds * 1000);
     };
+        
+
+        $('#GridV115 .del').on("click", function () {
+            //var id = this.attr("data-val");
+            var button = $(this);
+            // alert(button.attr('data-val'));
+            // $('.bd-example-modal-lg').modal();
+
+            bootbox.confirm({
+                message: "Are you really want to delete?",
+                buttons: {
+                    confirm: {
+                        label: 'Yes',
+                        className: 'btn-success'
+                    },
+                    cancel: {
+                        label: 'No',
+                        className: 'btn-danger'
+                    }
+                },
+                callback: function (result) {
+                    console.log('This was logged in the callback: ' + result);
+
+                    if (result) {
+                        DeleteData(button.attr('data-val'));
+                    }
+                }
+            });
+
+        });
+
+
+
+
+
+        function DeleteData(id) {
+            $.ajax({
+                type: "POST",
+                url: "v1-1-5.aspx/DeleteV115",
+                data: '{id : "' + id + '"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    window.setTimeout(function () { window.location.href = "v1-1-5.aspx" }, 500)
+                    //alert(res);
+
+                    
+
+
+                }
+            });
+        };
+
+
+
+
+
+
+        function showModal() {
+            $('.bd-example-modal-lg').modal();
+        };
     </script>
 
 

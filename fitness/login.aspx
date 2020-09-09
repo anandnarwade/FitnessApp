@@ -32,7 +32,8 @@
                         <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"></a>
+                        <%--<a class="nav-link" href="#"></a>--%>
+                        <asp:Label ID="lblMessage" runat="server" ForeColor="White" Font-Size="14px" Text=""></asp:Label>
                     </li>
                    
                   
@@ -57,6 +58,10 @@
                         <asp:Button ID="btnSubmit" runat="server" ValidationGroup="login" Text="Sign in" CssClass="btn btn-sm btn-info" OnClick="btnSubmit_Click" />
                       <asp:RequiredFieldValidator ValidationGroup="login" ControlToValidate="txtUserId" SetFocusOnError="true" ID="RequiredFieldValidator1" CssClass="badge badge-danger" runat="server" ErrorMessage="userid is required"></asp:RequiredFieldValidator>
                     <asp:RequiredFieldValidator ValidationGroup="login" ControlToValidate="txtPassword" SetFocusOnError="true" ID="RequiredFieldValidator2" runat="server" CssClass="badge badge-danger" ErrorMessage="password is required"></asp:RequiredFieldValidator>
+                    </div>
+
+                    <div class="form-group">
+                        <a href="forgotpwd.aspx" class="btn btn-sm btn-primary">Forgot passord?</a>
                     </div>
                     
                 </div>
@@ -362,6 +367,37 @@
         
         </div>
         <asp:HiddenField ID="hiddenOTP" runat="server" />
+
+
+
+        <!--below is modal code-->
+
+
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <span>Password Updated Successfully!</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+         <div class="text-center" id="msg" runat="server" visible="false">
+           <span style="font-size:16px; color:green">Registration Success! Please Login</span>
+       </div>
+        
     </form>
 
     <script type="text/javascript">
@@ -375,6 +411,10 @@
         //    if (!(arr.indexOf(kk) >= 0))
         //        e.preventDefault();
         //});
+
+        function success() {
+            $('#exampleModalLongTitle').modal();
+        }
 
         $(".date").datepicker({ dateFormat: 'yy-mm-dd' });
 

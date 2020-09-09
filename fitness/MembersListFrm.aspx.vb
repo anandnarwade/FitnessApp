@@ -16,13 +16,17 @@ Public Class MembersListFrm
 
     Private Sub BindGrid()
         Dim constr As String = ConfigurationManager.ConnectionStrings("connStr").ConnectionString
-        Dim query As String = "Select  name as [Name], email as [Email], mobile as [Mobile], SendCredMail ,IsRegister,  from CustomerMaster order by id desc"
+        Dim query As String = "Select ROW_NUMBER() OVER (Order by Id Desc) AS [SRNO],  name as [Name], email as [Email], mobile as [Mobile], IsRegister, SendCredMail as [Access Email Sent]  from CustomerMaster order by id desc"
         Using con As SqlConnection = New SqlConnection(constr)
             Using sda As SqlDataAdapter = New SqlDataAdapter(query, con)
                 Using dt As DataTable = New DataTable()
                     sda.Fill(dt)
                     GridMembersList.DataSource = dt
                     GridMembersList.DataBind()
+                    If (GridMembersList.Rows.Count > 0) Then
+                        GridMembersList.UseAccessibleHeader = True
+                        GridMembersList.HeaderRow.TableSection = TableRowSection.TableHeader
+                    End If
                 End Using
             End Using
         End Using

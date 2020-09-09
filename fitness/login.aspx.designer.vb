@@ -23,6 +23,15 @@ Partial Public Class login
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
     
     '''<summary>
+    '''lblMessage control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblMessage As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''txtUserId control.
     '''</summary>
     '''<remarks>
@@ -651,4 +660,13 @@ Partial Public Class login
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents hiddenOTP As Global.System.Web.UI.WebControls.HiddenField
+    
+    '''<summary>
+    '''msg control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents msg As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 End Class

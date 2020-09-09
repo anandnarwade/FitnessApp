@@ -20,6 +20,9 @@ Public Class GenericClass
         If (dt.Rows.Count > 0) Then
             GridName.DataSource = dt
             GridName.DataBind()
+            GridName.UseAccessibleHeader = True
+            GridName.HeaderRow.TableSection = TableRowSection.TableHeader
+
         End If
 
     End Sub
@@ -182,6 +185,57 @@ Public Class GenericClass
         End Try
 
     End Sub
+
+    Public Function GenerateOTP() As String
+        Dim alphabets As String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        Dim small_alphabets As String = "abcdefghijklmnopqrstuvwxyz"
+        Dim numbers As String = "1234567890"
+
+        Dim characters As String = numbers
+        'If rbType.SelectedItem.Value = "1" Then
+        '    characters += Convert.ToString(alphabets & small_alphabets) & numbers
+        'End If
+        ' Dim length As Integer = Integer.Parse(ddlLength.SelectedItem.Value)
+        Dim length As Integer = 4
+        Dim otp As String = String.Empty
+        For i As Integer = 0 To length - 1
+            Dim character As String = String.Empty
+            Do
+                Dim index As Integer = New Random().Next(0, characters.Length)
+                character = characters.ToCharArray()(index).ToString()
+            Loop While otp.IndexOf(character) <> -1
+            otp += character
+        Next
+        'lblOTP.Text = otp
+        Return otp
+    End Function
+
+
+    Public Function ValidatePassword(ByVal pwd As String,
+   Optional ByVal minLength As Integer = 8,
+   Optional ByVal numUpper As Integer = 2,
+   Optional ByVal numLower As Integer = 2,
+   Optional ByVal numNumbers As Integer = 2,
+   Optional ByVal numSpecial As Integer = 2) As Boolean
+
+        ' Replace [A-Z] with \p{Lu}, to allow for Unicode uppercase letters.
+        Dim upper As New System.Text.RegularExpressions.Regex("[A-Z]")
+        Dim lower As New System.Text.RegularExpressions.Regex("[a-z]")
+        Dim number As New System.Text.RegularExpressions.Regex("[0-9]")
+        ' Special is "none of the above".
+        Dim special As New System.Text.RegularExpressions.Regex("[^a-zA-Z0-9]")
+
+        ' Check the length.
+        If Len(pwd) < minLength Then Return False
+        ' Check for minimum number of occurrences.
+        If upper.Matches(pwd).Count < numUpper Then Return False
+        If lower.Matches(pwd).Count < numLower Then Return False
+        If number.Matches(pwd).Count < numNumbers Then Return False
+        If special.Matches(pwd).Count < numSpecial Then Return False
+
+        ' Passed all checks.
+        Return True
+    End Function
 
 
 End Class

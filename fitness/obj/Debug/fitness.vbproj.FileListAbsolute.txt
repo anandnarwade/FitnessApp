@@ -138,4 +138,3 @@ C:\Users\E7M93BF\Documents\Custome\fitness-master\fitness-master\fitness\bin\Sys
 C:\Users\E7M93BF\Documents\Custome\fitness-master\fitness-master\fitness\bin\System.Web.WebPages.xml
 C:\Users\E7M93BF\Documents\Custome\fitness-master\fitness-master\fitness\bin\System.Web.WebPages.Deployment.xml
 C:\Users\E7M93BF\Documents\Custome\fitness-master\fitness-master\fitness\bin\System.Web.WebPages.Razor.xml
-C:\Users\E7M93BF\Documents\Custome\fitness-master\fitness-master\fitness\obj\Debug\fitness.vbprojResolveAssemblyReference.cache

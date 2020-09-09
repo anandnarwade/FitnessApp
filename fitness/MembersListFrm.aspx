@@ -17,9 +17,12 @@
          <hr style="border:2px solid #343a40;" />  
 
         <div class="row" style="padding-left:20px;">
-            <asp:GridView ID="GridMembersList" runat="server" CssClass="table table-bordered table-sm">
+            <div class="col-sm-12">
+                 <asp:GridView ID="GridMembersList" runat="server" CssClass="table table-striped table-bordered  table-sm">
                 
             </asp:GridView>
+            </div>
+           
         </div>
     </div>
 

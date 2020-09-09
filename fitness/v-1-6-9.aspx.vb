@@ -36,6 +36,8 @@ Public Class v_1_6_9
     End Sub
 
 
+
+
     Private Function V169function(ByVal id As Integer, ByVal action As String) As Boolean
         Dim result As Boolean = False
         Dim query As String = "sp_v169"

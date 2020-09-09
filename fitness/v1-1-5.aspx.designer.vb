@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class v1_1_5
-
+    
     '''<summary>
     '''lblMessage control.
     '''</summary>
@@ -21,7 +21,16 @@ Partial Public Class v1_1_5
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblMessage As Global.System.Web.UI.WebControls.Label
-
+    
+    '''<summary>
+    '''btnNew control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnNew As Global.System.Web.UI.WebControls.Button
+    
     '''<summary>
     '''GridV115 control.
     '''</summary>
@@ -30,7 +39,7 @@ Partial Public Class v1_1_5
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents GridV115 As Global.System.Web.UI.WebControls.GridView
-
+    
     '''<summary>
     '''lblparent control.
     '''</summary>
@@ -39,7 +48,7 @@ Partial Public Class v1_1_5
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblparent As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtParent control.
     '''</summary>
@@ -48,7 +57,7 @@ Partial Public Class v1_1_5
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtParent As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblWitness control.
     '''</summary>
@@ -57,7 +66,7 @@ Partial Public Class v1_1_5
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblWitness As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtWitness control.
     '''</summary>
@@ -66,7 +75,7 @@ Partial Public Class v1_1_5
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtWitness As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''GridParq control.
     '''</summary>
@@ -75,7 +84,16 @@ Partial Public Class v1_1_5
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents GridParq As Global.System.Web.UI.WebControls.GridView
-
+    
+    '''<summary>
+    '''btnUpdate control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnUpdate As Global.System.Web.UI.WebControls.Button
+    
     '''<summary>
     '''btnSubmit control.
     '''</summary>
@@ -84,4 +102,13 @@ Partial Public Class v1_1_5
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnSubmit As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''HiddenTrId control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents HiddenTrId As Global.System.Web.UI.WebControls.HiddenField
 End Class
