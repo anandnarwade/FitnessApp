@@ -24,7 +24,7 @@ Public Class login
             Dim res As Boolean = False
             Dim name As String = Nothing
 
-            Dim lgcmd As New SqlCommand("Select * from PasswordMaster inner join CustomerMaster on PasswordMaster.email = CustomerMaster.email  where PasswordMaster.email = @email and pwd = @pwd", con)
+            Dim lgcmd As New SqlCommand("Select top 1 * from PasswordMaster inner join CustomerMaster on PasswordMaster.email = CustomerMaster.email  where PasswordMaster.email = @email and pwd = @pwd order by PasswordMaster.Id desc", con)
             lgcmd.CommandType = CommandType.Text
             lgcmd.Parameters.AddWithValue("@email", txtUserId.Text)
             lgcmd.Parameters.AddWithValue("@pwd", txtPassword.Text)
@@ -43,6 +43,16 @@ Public Class login
             If (res) Then
                 Session("Email") = txtUserId.Text
                 Session("Name") = name
+
+                Dim _generic As New GenericClass
+                Dim IsAdmin As Boolean = _generic._IsExists("Select IsAdmin from CustomerMaster where email = '" & txtUserId.Text & "'")
+
+                If (IsAdmin) Then
+                    Session("Admin") = True
+                Else
+                    Session("Admin") = False
+                End If
+
                 Response.Redirect("home.aspx")
             End If
 
@@ -270,8 +280,6 @@ Public Class login
         End If
     End Sub
 
-
-
     Private Function GenerateOTP(sender As Object, e As EventArgs) As String
         Dim alphabets As String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         Dim small_alphabets As String = "abcdefghijklmnopqrstuvwxyz"
@@ -298,8 +306,11 @@ Public Class login
 
     Protected Sub txtSentOTP_Click(sender As Object, e As EventArgs)
         If (Page.IsValid) Then
+
             hiddenOTP.Value = GenerateOTP(Nothing, Nothing)
+
             _generic.SendOTPOnEmail(txtPEmail.Text, hiddenOTP.Value)
+
         End If
     End Sub
 

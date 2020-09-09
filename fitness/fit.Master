@@ -38,6 +38,9 @@
       <li class="nav-item dropdown">
         
       </li>
+
+        <% If (Session("IsAdmin") = True) Then %>
+
          <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-cog"></i> Administration
@@ -54,6 +57,9 @@
           
         </div>
       </li>
+
+           <% End If %>
+        
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
