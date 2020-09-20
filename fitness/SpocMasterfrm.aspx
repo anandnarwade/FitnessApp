@@ -59,7 +59,7 @@
         <hr />
         <div class="row" style="padding-left:20px;">
             <div class="col-sm-12">
-                <asp:GridView ID="GridSpoc" Font-Size="12px" runat="server" CssClass="table table-bordered" AutoGenerateColumns="false" >
+                <asp:GridView ID="GridSpoc" Font-Size="12px" runat="server" CssClass="table table-bordered table-striped table-sm" AutoGenerateColumns="false" >
                     <Columns>
                         <asp:BoundField DataField="spocname" HeaderText="SPOC Name" />
                         <asp:BoundField DataField="designation" HeaderText="Designation" />

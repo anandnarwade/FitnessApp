@@ -29,6 +29,11 @@ Public Class V_1_3_7
                     sda.Fill(dt)
                     GridName.DataSource = dt
                     GridName.DataBind()
+
+                    If (GridV137.Rows.Count > 0) Then
+                        GridV137.UseAccessibleHeader = True
+                        GridV137.HeaderRow.TableSection = TableRowSection.TableHeader
+                    End If
                 End Using
             End Using
         End Using
@@ -44,6 +49,8 @@ Public Class V_1_3_7
                     sda.Fill(dt)
                     DataListName.DataSource = dt
                     DataListName.DataBind()
+
+
                 End Using
             End Using
         End Using
@@ -112,29 +119,32 @@ Public Class V_1_3_7
         If (GridQ5.Rows.Count > 0) Then
 
             For Each row As GridViewRow In Me.GridQ5.Rows
-                Dim lblQId As Label = TryCast(row.FindControl("lblQId"), Label)
-                Dim RdoOp1 As RadioButton = TryCast(row.FindControl("RdoOp1"), RadioButton)
-                Dim RdoOp2 As RadioButton = TryCast(row.FindControl("RdoOp2"), RadioButton)
-                Dim RdoOp3 As RadioButton = TryCast(row.FindControl("RdoOp3"), RadioButton)
-                Dim RdoOp4 As RadioButton = TryCast(row.FindControl("RdoOp4"), RadioButton)
-                Dim RdoOp5 As RadioButton = TryCast(row.FindControl("RdoOp5"), RadioButton)
+                If (row.RowType = DataControlRowType.DataRow) Then
+                    Dim lblQId As Label = TryCast(row.FindControl("lblQId"), Label)
+                    Dim RdoOp1 As RadioButton = TryCast(row.FindControl("RdoOp1"), RadioButton)
+                    Dim RdoOp2 As RadioButton = TryCast(row.FindControl("RdoOp2"), RadioButton)
+                    Dim RdoOp3 As RadioButton = TryCast(row.FindControl("RdoOp3"), RadioButton)
+                    Dim RdoOp4 As RadioButton = TryCast(row.FindControl("RdoOp4"), RadioButton)
+                    Dim RdoOp5 As RadioButton = TryCast(row.FindControl("RdoOp5"), RadioButton)
 
-                Dim _rating As Integer
+                    Dim _rating As Integer
 
-                If (RdoOp1.Checked) Then
-                    _rating = 1
-                ElseIf (RdoOp2.Checked)
-                    _rating = 2
-                ElseIf (RdoOp3.Checked)
-                    _rating = 3
-                ElseIf (RdoOp4.Checked)
-                    _rating = 4
-                ElseIf (RdoOp5.Checked)
-                    _rating = 5
-                End If
-                If (lblQId.Text <> "") Then
-                    'res = saveTransactions(_137Id, lblQId.Text, "Q5", _rating)
-                    res = saveTransactions(Convert.ToInt64(_137Id), Convert.ToInt32(lblQId.Text), "Q5", _rating.ToString())
+                    If (RdoOp1.Checked) Then
+                        _rating = 1
+                    ElseIf (RdoOp2.Checked)
+                        _rating = 2
+                    ElseIf (RdoOp3.Checked)
+                        _rating = 3
+                    ElseIf (RdoOp4.Checked)
+                        _rating = 4
+                    ElseIf (RdoOp5.Checked)
+                        _rating = 5
+                    End If
+                    If (lblQId.Text <> "") Then
+                        'res = saveTransactions(_137Id, lblQId.Text, "Q5", _rating)
+                        res = saveTransactions(Convert.ToInt64(_137Id), Convert.ToInt32(lblQId.Text), "Q5", _rating.ToString())
+                    End If
+
                 End If
 
 
@@ -150,47 +160,52 @@ Public Class V_1_3_7
         Dim res As Boolean = False
         If (GridQ15.Rows.Count > 0) Then
 
-            For Each row As GridViewRow In Me.GridQ5.Rows
-                Dim lblQId As Label = TryCast(row.FindControl("lblQId"), Label)
-                Dim RdoOp1 As RadioButton = TryCast(row.FindControl("RdoOp1"), RadioButton)
-                Dim RdoOp2 As RadioButton = TryCast(row.FindControl("RdoOp2"), RadioButton)
-                Dim RdoOp3 As RadioButton = TryCast(row.FindControl("RdoOp3"), RadioButton)
-                Dim RdoOp4 As RadioButton = TryCast(row.FindControl("RdoOp4"), RadioButton)
-                Dim RdoOp5 As RadioButton = TryCast(row.FindControl("RdoOp5"), RadioButton)
-                Dim RdoOp6 As RadioButton = TryCast(row.FindControl("RdoOp6"), RadioButton)
-                Dim RdoOp7 As RadioButton = TryCast(row.FindControl("RdoOp7"), RadioButton)
-                Dim RdoOp8 As RadioButton = TryCast(row.FindControl("RdoOp8"), RadioButton)
-                Dim RdoOp9 As RadioButton = TryCast(row.FindControl("RdoOp9"), RadioButton)
-                Dim RdoOp10 As RadioButton = TryCast(row.FindControl("RdoOp10"), RadioButton)
+            For Each row As GridViewRow In Me.GridQ15.Rows
+                If (row.RowType = DataControlRowType.DataRow) Then
+
+                    Dim lblQId As Label = TryCast(row.FindControl("lblQId"), Label)
+                    Dim RdoOp1 As RadioButton = TryCast(row.FindControl("RdoOp1"), RadioButton)
+                    Dim RdoOp2 As RadioButton = TryCast(row.FindControl("RdoOp2"), RadioButton)
+                    Dim RdoOp3 As RadioButton = TryCast(row.FindControl("RdoOp3"), RadioButton)
+                    Dim RdoOp4 As RadioButton = TryCast(row.FindControl("RdoOp4"), RadioButton)
+                    Dim RdoOp5 As RadioButton = TryCast(row.FindControl("RdoOp5"), RadioButton)
+                    Dim RdoOp6 As RadioButton = TryCast(row.FindControl("RdoOp6"), RadioButton)
+                    Dim RdoOp7 As RadioButton = TryCast(row.FindControl("RdoOp7"), RadioButton)
+                    Dim RdoOp8 As RadioButton = TryCast(row.FindControl("RdoOp8"), RadioButton)
+                    Dim RdoOp9 As RadioButton = TryCast(row.FindControl("RdoOp9"), RadioButton)
+                    Dim RdoOp10 As RadioButton = TryCast(row.FindControl("RdoOp10"), RadioButton)
 
 
-                Dim _rating As Integer
+                    Dim _rating As Integer
 
-                If (RdoOp1.Checked) Then
-                    _rating = 1
-                ElseIf (RdoOp2.Checked)
-                    _rating = 2
-                ElseIf (RdoOp3.Checked)
-                    _rating = 3
-                ElseIf (RdoOp4.Checked)
-                    _rating = 4
-                ElseIf (RdoOp5.Checked)
-                    _rating = 5
-                ElseIf (RdoOp6.Checked)
-                    _rating = 6
-                ElseIf (RdoOp7.Checked)
-                    _rating = 7
-                ElseIf (RdoOp8.Checked)
-                    _rating = 8
-                ElseIf (RdoOp9.Checked)
-                    _rating = 9
-                ElseIf (RdoOp10.Checked)
-                    _rating = 10
+                    If (RdoOp1.Checked) Then
+                        _rating = 1
+                    ElseIf (RdoOp2.Checked)
+                        _rating = 2
+                    ElseIf (RdoOp3.Checked)
+                        _rating = 3
+                    ElseIf (RdoOp4.Checked)
+                        _rating = 4
+                    ElseIf (RdoOp5.Checked)
+                        _rating = 5
+                    ElseIf (RdoOp6.Checked)
+                        _rating = 6
+                    ElseIf (RdoOp7.Checked)
+                        _rating = 7
+                    ElseIf (RdoOp8.Checked)
+                        _rating = 8
+                    ElseIf (RdoOp9.Checked)
+                        _rating = 9
+                    ElseIf (RdoOp10.Checked)
+                        _rating = 10
+                    End If
+
+                    If (lblQId.Text <> "") Then
+                        res = saveTransactions(Convert.ToInt64(_137Id), Convert.ToInt32(lblQId.Text), "Q15", _rating.ToString())
+                    End If
+
                 End If
 
-                If (lblQId.Text <> "") Then
-                    res = saveTransactions(Convert.ToInt64(_137Id), Convert.ToInt32(lblQId.Text), "Q15", _rating.ToString())
-                End If
 
 
             Next
@@ -243,8 +258,10 @@ Public Class V_1_3_7
                 Dim lblIntersetId As Label = TryCast(row.FindControl("lblIntersetId"), Label)
                 Dim chkDlinterest As CheckBox = TryCast(row.FindControl("chkDlinterest"), CheckBox)
 
+
+
                 If (chkDlinterest.Checked) Then
-                    result = saveTransactions(_v137id, lblIntersetId.Text, "Q14", chkDlinterest.Text)
+                    result = saveTransactions(_v137id, lblIntersetId.Text, "Q14", "1")
                 End If
             Next
         End If
@@ -320,5 +337,229 @@ Public Class V_1_3_7
         Dim url As String = "print137.aspx?id=" & v126Id
         Dim s As String = "window.open('" & url + "', 'popup_window', 'width=1080,height=720,left=100,top=100,resizable=yes');"
         ClientScript.RegisterStartupScript(Me.GetType(), "script", s, True)
+    End Sub
+
+    Protected Sub lnkEdit_Click(sender As Object, e As EventArgs)
+        Dim v126Id As String = TryCast(sender, LinkButton).CommandArgument
+        hiddenId.Value = v126Id
+
+        _fillDataForEdit(hiddenId.Value)
+
+        ClientScript.RegisterStartupScript(Me.[GetType](), "alert", "showModal();", True)
+
+    End Sub
+
+
+    Private Sub _fillDataForEdit(ByVal _id As Integer)
+        Dim sConnection As String = ConfigurationManager.ConnectionStrings("connStr").ConnectionString
+        Using Con As New SqlConnection(sConnection)
+            Con.Open()
+            Using Com As New SqlCommand("SElect * from v137 where id = '" & _id & "'", Con)
+                Using RDR = Com.ExecuteReader()
+                    If RDR.HasRows Then
+                        Do While RDR.Read
+                            'txtName.Text = RDR.Item("Name").ToString()
+
+                            ddmExeRate.SelectedValue = RDR.Item("RateExp").ToString()
+                            ddmAthlete.SelectedItem.Text = RDR.Item("IsAthlete").ToString()
+                            txtAthelete.Text = RDR.Item("IfAthleteY").ToString()
+                            ddmNegFeeling.SelectedItem.Text = RDR.Item("IsNegFeeling").ToString()
+                            txtNegFeelingY.Text = RDR.Item("IfNegFeelingY").ToString()
+                            ddmNegFeelingE.SelectedItem.Text = RDR.Item("IsNegFeelingFit").ToString()
+                            txtNegfeelE.Text = RDR.Item("IsNegFeelingFitY").ToString()
+                            ddmStExe.SelectedItem.Text = RDR.Item("IsStartExe").ToString()
+                            txtExeTime.Text = RDR.Item("ExeTime").ToString()
+                            ddmExeUnit.SelectedItem.Text = RDR.Item("ExeUnit").ToString()
+                            ddmRegExe.SelectedItem.Text = RDR.Item("RegIndExe").ToString()
+
+                            txtRegExeTime.Text = RDR.Item("RegIndExeTime").ToString()
+                            ddmRegExeUnit.SelectedItem.Text = RDR.Item("RegIndExeUnit").ToString()
+                            txtRegExeY.Text = RDR.Item("IfRegIndExeY").ToString()
+                            ddmPerExe.SelectedItem.Text = RDR.Item("RateRedIndExe").ToString()
+                            txtExeMonths.Text = RDR.Item("ExeFromMonths").ToString()
+                            txtExeYear.Text = RDR.Item("ExeFromYeasrs").ToString()
+                            txtPartiMonths.Text = RDR.Item("ParticipatedOtherExeMonths").ToString()
+                            txtPartiYears.Text = RDR.Item("ParticipatedOtherExeYears").ToString()
+                            ddmExeWorkDay.SelectedItem.Text = RDR.Item("ExeDuringWRKDY").ToString()
+                            ddmExeWorkInteJob.SelectedItem.Text = RDR.Item("ExeInterfereWithJob").ToString()
+
+                            ddmExeWorkJob.SelectedItem.Text = RDR.Item("ExeBenefitJob").ToString()
+                            txtPosi.Text = RDR.Item("WeightInc").ToString()
+                            txtNeg.Text = RDR.Item("WeightDec").ToString()
+
+                        Loop
+                    End If
+                End Using
+            End Using
+            Con.Close()
+
+
+            Me.BindGrid("Select id,question, sequence from QuestionsMaster where type = 'v137' and subtype = 'Q5' order by sequence asc", GridQ5)
+
+
+            Con.Open()
+            Using Com2 As New SqlCommand("Select * from v137Transactions where subQ = 'Q5' and v137id = '" & _id & "'", Con)
+                Using RDR = Com2.ExecuteReader()
+                    If RDR.HasRows Then
+                        Do While RDR.Read
+                            Dim QId As String = RDR.Item("qid").ToString()
+                            Dim Ans As String = RDR.Item("Ans").ToString()
+                            If (GridQ5.Rows.Count > 2) Then
+                                For Each row As GridViewRow In GridQ5.Rows
+
+
+                                    Dim lblQId As Label = TryCast(row.FindControl("lblQId"), Label)
+                                    Dim RdoOp1 As RadioButton = TryCast(row.FindControl("RdoOp1"), RadioButton)
+                                    Dim RdoOp2 As RadioButton = TryCast(row.FindControl("RdoOp2"), RadioButton)
+                                    Dim RdoOp3 As RadioButton = TryCast(row.FindControl("RdoOp3"), RadioButton)
+                                    Dim RdoOp4 As RadioButton = TryCast(row.FindControl("RdoOp4"), RadioButton)
+                                    Dim RdoOp5 As RadioButton = TryCast(row.FindControl("RdoOp5"), RadioButton)
+
+                                    If (QId = lblQId.Text) Then
+                                        Select Case Ans
+                                            Case "1"
+                                                RdoOp1.Checked = True
+                                                Exit For
+
+                                            Case "2"
+                                                RdoOp2.Checked = True
+                                                Exit For
+
+                                            Case "3"
+                                                RdoOp3.Checked = True
+                                                Exit For
+
+                                            Case "4"
+                                                RdoOp4.Checked = True
+                                                Exit For
+
+                                            Case "5"
+                                                RdoOp5.Checked = True
+                                                Exit For
+
+                                        End Select
+                                    End If
+
+
+
+                                Next
+                            End If
+
+                        Loop
+                    End If
+                End Using
+            End Using
+            Con.Close()
+
+
+
+
+            Con.Open()
+            Using Com3 As New SqlCommand("Select * from v137Transactions where subQ = 'Q14' and v137id = '" & _id & "'", Con)
+                Using RDR = Com3.ExecuteReader()
+                    If RDR.HasRows Then
+                        Do While RDR.Read
+                            Dim QId As String = RDR.Item("qid").ToString()
+                            Dim Ans As String = RDR.Item("Ans").ToString()
+
+                            If (DLInterest.Items.Count > 0) Then
+                                For Each row As DataListItem In Me.DLInterest.Items
+                                    Dim lblIntersetId As Label = TryCast(row.FindControl("lblIntersetId"), Label)
+                                    Dim chkDlinterest As CheckBox = TryCast(row.FindControl("chkDlinterest"), CheckBox)
+                                    Dim lbldlInterest As Label = TryCast(row.FindControl("lbldlInterest"), Label)
+
+                                    If (QId = lblIntersetId.Text) Then
+
+                                        chkDlinterest.Checked = True
+
+                                    End If
+                                Next
+                            End If
+                        Loop
+                    End If
+                End Using
+            End Using
+            Con.Close()
+
+
+            Me.BindGrid("Select id ,question, sequence from QuestionsMaster where type = 'v137' and subtype = 'Q15' order by sequence asc", GridQ15)
+
+
+            Con.Open()
+            Using Com4 As New SqlCommand("Select * from v137Transactions where subQ = 'Q15' and v137id = '" & _id & "'", Con)
+                Using RDR = Com4.ExecuteReader()
+                    If RDR.HasRows Then
+                        Do While RDR.Read
+                            Dim QId As String = RDR.Item("qid").ToString()
+                            Dim Ans As String = RDR.Item("Ans").ToString()
+
+                            If (GridQ15.Rows.Count > 1) Then
+                                For Each row As GridViewRow In Me.GridQ15.Rows
+                                    Dim lblQId As Label = TryCast(row.FindControl("lblQId"), Label)
+
+                                    Dim RdoOp1 As RadioButton = TryCast(row.FindControl("RdoOp1"), RadioButton)
+                                    Dim RdoOp2 As RadioButton = TryCast(row.FindControl("RdoOp2"), RadioButton)
+                                    Dim RdoOp3 As RadioButton = TryCast(row.FindControl("RdoOp3"), RadioButton)
+                                    Dim RdoOp4 As RadioButton = TryCast(row.FindControl("RdoOp4"), RadioButton)
+                                    Dim RdoOp5 As RadioButton = TryCast(row.FindControl("RdoOp5"), RadioButton)
+
+
+                                    Dim RdoOp6 As RadioButton = TryCast(row.FindControl("RdoOp6"), RadioButton)
+                                    Dim RdoOp7 As RadioButton = TryCast(row.FindControl("RdoOp7"), RadioButton)
+                                    Dim RdoOp8 As RadioButton = TryCast(row.FindControl("RdoOp8"), RadioButton)
+                                    Dim RdoOp9 As RadioButton = TryCast(row.FindControl("RdoOp9"), RadioButton)
+                                    Dim RdoOp10 As RadioButton = TryCast(row.FindControl("RdoOp10"), RadioButton)
+
+
+                                    If (QId = lblQId.Text) Then
+
+                                        Select Case Ans
+                                            Case "1"
+                                                RdoOp1.Checked = True
+
+                                            Case "2"
+                                                RdoOp2.Checked = True
+                                            Case "3"
+                                                RdoOp3.Checked = True
+
+                                            Case "4"
+                                                RdoOp4.Checked = True
+
+                                            Case "5"
+                                                RdoOp5.Checked = True
+
+                                            Case "6"
+                                                RdoOp6.Checked = True
+
+                                            Case "7"
+                                                RdoOp7.Checked = True
+
+                                            Case "8"
+                                                RdoOp8.Checked = True
+
+                                            Case "9"
+                                                RdoOp9.Checked = True
+
+                                            Case "10"
+                                                RdoOp10.Checked = True
+
+                                        End Select
+
+
+                                    End If
+
+
+
+                                Next
+                            End If
+
+                        Loop
+                    End If
+                End Using
+            End Using
+            Con.Close()
+
+
+        End Using
     End Sub
 End Class

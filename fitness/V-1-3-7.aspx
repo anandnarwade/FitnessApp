@@ -25,7 +25,7 @@
         <hr style="border:2px solid #343a40;" />  
         <div class="row" style="">
             <div class="col-sm-12">
-                <asp:GridView ID="GridV137" runat="server" CssClass="table table-bordered" AutoGenerateColumns="false" >
+                <asp:GridView ID="GridV137" ClientIDMode="Static" runat="server" CssClass="table table-bordered table-striped table-sm" AutoGenerateColumns="false" >
                     <Columns>
                         <asp:TemplateField HeaderText="Sr.No">
                            <ItemTemplate>
@@ -39,11 +39,19 @@
                             <ItemTemplate>
                                 <asp:LinkButton ID="lnkPrint" CommandArgument='<%#Eval("id") %>' OnClick="lnkPrint_Click"  runat="server">
                                     <i class="fa fa-print"></i>
-                                </asp:LinkButton>
+                                </asp:LinkButton> ||
+
+                                <asp:LinkButton ID="lnkEdit" runat="server" CommandArgument='<%#Eval("id") %>' OnClick="lnkEdit_Click"  ToolTip="click to edit" >
+                                    <i class="fa fa-edit"></i>
+                                </asp:LinkButton> ||
+
+                                 <a href="#" class="del" style="color:red" data-val='<%#Eval("id") %>' title="click to delete" ><i class="fa fa-trash"></i></a>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
+
+                <asp:HiddenField ID="hiddenId" runat="server" />
             </div>
         </div>
     </div>
@@ -646,5 +654,12 @@ Use the following scale to rate each goal separately.
             document.getElementById("<%=lblMessage.ClientID %>").style.display = "none";
         }, seconds * 1000);
     };
+
+
+        function showModal() {
+            $('.bd-example-modal-lg').modal();
+        }
+
+
     </script>
 </asp:Content>

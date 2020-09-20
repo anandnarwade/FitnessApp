@@ -32,6 +32,15 @@ Partial Public Class V_1_3_7
     Protected WithEvents GridV137 As Global.System.Web.UI.WebControls.GridView
     
     '''<summary>
+    '''hiddenId control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents hiddenId As Global.System.Web.UI.WebControls.HiddenField
+    
+    '''<summary>
     '''ddmExeRate control.
     '''</summary>
     '''<remarks>

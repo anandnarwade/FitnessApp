@@ -23,6 +23,96 @@ Partial Public Class MembersFrm
     Protected WithEvents lblMessage As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
+    '''txtStartDAte control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtStartDAte As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''CustomValidator2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CustomValidator2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''txtendDate control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtendDate As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''CustomValidator1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CustomValidator1 As Global.System.Web.UI.WebControls.CustomValidator
+    
+    '''<summary>
+    '''ddmCompany control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddmCompany As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''ddmCompanyDataSource control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddmCompanyDataSource As Global.System.Web.UI.WebControls.SqlDataSource
+    
+    '''<summary>
+    '''RequiredFieldValidator1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RequiredFieldValidator1 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''txtPraCount control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtPraCount As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''hiddenCountId control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents hiddenCountId As Global.System.Web.UI.WebControls.HiddenField
+    
+    '''<summary>
+    '''txtACount control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtACount As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
     '''FileUpload1 control.
     '''</summary>
     '''<remarks>
@@ -30,6 +120,15 @@ Partial Public Class MembersFrm
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents FileUpload1 As Global.System.Web.UI.WebControls.FileUpload
+    
+    '''<summary>
+    '''RequiredFieldValidator2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RequiredFieldValidator2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
     
     '''<summary>
     '''btnUpload control.

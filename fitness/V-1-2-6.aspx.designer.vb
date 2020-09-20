@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class V_1_2_6
-
+    
     '''<summary>
     '''lblMessage control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class V_1_2_6
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblMessage As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''GridV115 control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class V_1_2_6
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents GridV115 As Global.System.Web.UI.WebControls.GridView
-
+    
     '''<summary>
     '''lblphysicianName control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class V_1_2_6
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblphysicianName As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtphysicianName control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class V_1_2_6
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtphysicianName As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblphysicianPhone control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class V_1_2_6
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblphysicianPhone As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtphysicianPhone control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class V_1_2_6
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtphysicianPhone As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblemergencyContactPersonName control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class V_1_2_6
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblemergencyContactPersonName As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtemergencyContactPersonName control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class V_1_2_6
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtemergencyContactPersonName As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblemergencyContactPersonPhone control.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class V_1_2_6
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblemergencyContactPersonPhone As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtemergencyContactPersonPhone control.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class V_1_2_6
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtemergencyContactPersonPhone As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblMedicineDrugsAndReason control.
     '''</summary>
@@ -111,7 +111,7 @@ Partial Public Class V_1_2_6
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblMedicineDrugsAndReason As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtMedicineDrugsAndReason control.
     '''</summary>
@@ -120,7 +120,7 @@ Partial Public Class V_1_2_6
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtMedicineDrugsAndReason As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblPhysicianKnowParticipation control.
     '''</summary>
@@ -129,7 +129,7 @@ Partial Public Class V_1_2_6
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblPhysicianKnowParticipation As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtPhysicianKnowParticipation control.
     '''</summary>
@@ -138,7 +138,7 @@ Partial Public Class V_1_2_6
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtPhysicianKnowParticipation As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblPhysicalActivity control.
     '''</summary>
@@ -147,7 +147,7 @@ Partial Public Class V_1_2_6
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblPhysicalActivity As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtPhysicalActivity control.
     '''</summary>
@@ -156,7 +156,7 @@ Partial Public Class V_1_2_6
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtPhysicalActivity As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''GridParq control.
     '''</summary>
@@ -165,7 +165,7 @@ Partial Public Class V_1_2_6
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents GridParq As Global.System.Web.UI.WebControls.GridView
-
+    
     '''<summary>
     '''btnSubmit control.
     '''</summary>
@@ -174,4 +174,13 @@ Partial Public Class V_1_2_6
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnSubmit As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''hidden126Id control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents hidden126Id As Global.System.Web.UI.WebControls.HiddenField
 End Class

@@ -5,6 +5,7 @@ Imports System.Configuration
 Imports System.Net.Configuration
 Imports System.Net
 Imports System.Net.Mail
+Imports System.IO
 
 Public Class GenericClass
     Dim conStr As String = ConfigurationManager.ConnectionStrings("connStr").ConnectionString
@@ -157,6 +158,54 @@ Public Class GenericClass
         End Try
 
     End Sub
+
+
+    Private Function FileExists(ByVal FileFullPath As String) _
+     As Boolean
+        If Trim(FileFullPath) = "" Then Return False
+
+        Dim f As New IO.FileInfo(FileFullPath)
+        Return f.Exists
+
+    End Function
+
+
+
+    Public Sub SendEmailWithAttachments(ByVal recivermail As String, ByVal attPath As String)
+
+        Dim AttachmentFile As String = ""
+        Dim _msg As New MailMessage()
+        Dim _client As New SmtpClient()
+        Try
+            _msg.Subject = "Access Created in Fitness app portal"
+            _msg.Body = "<div style='width:100%; font-family:'verdana';, font-size:12px;'><p>Dear User, <br/> your access has been created in fitness app portal. <br/> Below is the portal URL Kindly setup your account.<p> <br/> <br/> URL : '" & portalUrl & "' </div>"
+            _msg.From = New MailAddress("mail.duedate@gmail.com")
+            _msg.To.Add(recivermail)
+            _msg.IsBodyHtml = True
+
+            Dim attach As New Net.Mail.Attachment(attPath)
+            _msg.Attachments.Add(attach)
+            ' Dim _file As New FileInfo(HttpContext.Server.MapPath("/files/MemberTemplate.xlsx"))
+            'If FileExists(AttachmentFile) Then _
+            '     _msg.Attachments.Add(AttachmentFile)
+            '_msg.Attachments.Add()
+            _client.Host = "smtp.gmail.com"
+            Dim basicauthenticationinfo As New NetworkCredential("mail.duedate@gmail.com", "mail.due")
+            _client.Port = Integer.Parse("587")
+            _client.EnableSsl = True
+            _client.UseDefaultCredentials = False
+            _client.Credentials = basicauthenticationinfo
+            _client.DeliveryMethod = SmtpDeliveryMethod.Network
+            _client.Send(_msg)
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+    End Sub
+
+
+
 
 
 

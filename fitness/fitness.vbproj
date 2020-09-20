@@ -340,7 +340,7 @@
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
-    <Content Include="forgotpwd.aspx" />
+    <Content Include="Content\forgotpwd.aspx" />
     <Content Include="home.aspx" />
     <Content Include="images\back.png" />
     <Content Include="images\cool-background.png" />
@@ -354,6 +354,7 @@
     <Content Include="printv126.aspx" />
     <Content Include="printv143.aspx" />
     <Content Include="printV158.aspx" />
+    <Content Include="Scripts\app\GenericJs.js" />
     <Content Include="Scripts\bootbox.js" />
     <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -569,10 +570,10 @@
       <DependentUpon>fit.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="forgotpwd.aspx.designer.vb">
+    <Compile Include="Content\forgotpwd.aspx.designer.vb">
       <DependentUpon>forgotpwd.aspx</DependentUpon>
     </Compile>
-    <Compile Include="forgotpwd.aspx.vb">
+    <Compile Include="Content\forgotpwd.aspx.vb">
       <DependentUpon>forgotpwd.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>

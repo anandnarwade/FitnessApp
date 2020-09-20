@@ -114,6 +114,240 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:fitness.CompanyMasterFrm._txtspocName">
+<summary>
+txtspocName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._RequiredFieldValidator3">
+<summary>
+RequiredFieldValidator3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._txtEmail">
+<summary>
+txtEmail control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._RequiredFieldValidator5">
+<summary>
+RequiredFieldValidator5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._txtContactNo">
+<summary>
+txtContactNo control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._RequiredFieldValidator6">
+<summary>
+RequiredFieldValidator6 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._btnAddSpoc">
+<summary>
+btnAddSpoc control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._GridSpoc">
+<summary>
+GridSpoc control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._txtMemberName">
+<summary>
+txtMemberName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._RequiredFieldValidator9">
+<summary>
+RequiredFieldValidator9 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._txtMemberEmail">
+<summary>
+txtMemberEmail control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._RequiredFieldValidator10">
+<summary>
+RequiredFieldValidator10 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._txtMemberMobile">
+<summary>
+txtMemberMobile control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._RequiredFieldValidator11">
+<summary>
+RequiredFieldValidator11 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._btnAddMember">
+<summary>
+btnAddMember control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._GridMember">
+<summary>
+GridMember control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._txtPrapCnt">
+<summary>
+txtPrapCnt control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._RequiredFieldValidator8">
+<summary>
+RequiredFieldValidator8 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._txtAppCnt">
+<summary>
+txtAppCnt control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._CustomValidator3">
+<summary>
+CustomValidator3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._txtStartDAte">
+<summary>
+txtStartDAte control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._CustomValidator2">
+<summary>
+CustomValidator2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._txtendDate">
+<summary>
+txtendDate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._CustomValidator1">
+<summary>
+CustomValidator1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._btnSaveCount">
+<summary>
+btnSaveCount control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._GridCount">
+<summary>
+GridCount control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:fitness.CompanyMasterFrm._GridCompany">
 <summary>
 GridCompany control.
@@ -126,6 +360,42 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:fitness.CompanyMasterFrm._hiddenId">
 <summary>
 hiddenId control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._hiddenCompanyIdForSpoc">
+<summary>
+hiddenCompanyIdForSpoc control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._hiddenMemberId">
+<summary>
+hiddenMemberId control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._hiddenSpocId">
+<summary>
+hiddenSpocId control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.CompanyMasterFrm._hiddenCountId">
+<summary>
+hiddenCountId control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -996,9 +1266,108 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:fitness.MembersFrm._txtStartDAte">
+<summary>
+txtStartDAte control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.MembersFrm._CustomValidator2">
+<summary>
+CustomValidator2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.MembersFrm._txtendDate">
+<summary>
+txtendDate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.MembersFrm._CustomValidator1">
+<summary>
+CustomValidator1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.MembersFrm._ddmCompany">
+<summary>
+ddmCompany control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.MembersFrm._ddmCompanyDataSource">
+<summary>
+ddmCompanyDataSource control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.MembersFrm._RequiredFieldValidator1">
+<summary>
+RequiredFieldValidator1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.MembersFrm._txtPraCount">
+<summary>
+txtPraCount control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.MembersFrm._hiddenCountId">
+<summary>
+hiddenCountId control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.MembersFrm._txtACount">
+<summary>
+txtACount control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:fitness.MembersFrm._FileUpload1">
 <summary>
 FileUpload1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.MembersFrm._RequiredFieldValidator2">
+<summary>
+RequiredFieldValidator2 control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -2170,6 +2539,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:fitness.V_1_2_6._hidden126Id">
+<summary>
+hidden126Id control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:fitness.V_1_3_7._lblMessage">
 <summary>
 lblMessage control.
@@ -2182,6 +2560,15 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:fitness.V_1_3_7._GridV137">
 <summary>
 GridV137 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.V_1_3_7._hiddenId">
+<summary>
+hiddenId control.
 </summary>
 <remarks>
 Auto-generated field.

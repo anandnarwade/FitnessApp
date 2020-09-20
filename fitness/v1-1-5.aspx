@@ -129,11 +129,9 @@
         
 
         $('#GridV115 .del').on("click", function () {
-            //var id = this.attr("data-val");
+           
             var button = $(this);
-            // alert(button.attr('data-val'));
-            // $('.bd-example-modal-lg').modal();
-
+           
             bootbox.confirm({
                 message: "Are you really want to delete?",
                 buttons: {
