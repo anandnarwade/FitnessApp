@@ -32,6 +32,15 @@ Partial Public Class v_1_6_9
     Protected WithEvents GridV169 As Global.System.Web.UI.WebControls.GridView
     
     '''<summary>
+    '''hiddenID control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents hiddenID As Global.System.Web.UI.WebControls.HiddenField
+    
+    '''<summary>
     '''txtHRDate control.
     '''</summary>
     '''<remarks>

@@ -2917,6 +2917,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:fitness.v_1_5_8._hiddenId">
+<summary>
+hiddenId control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:fitness.v_1_6_9._lblMessage">
 <summary>
 lblMessage control.
@@ -2929,6 +2938,15 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:fitness.v_1_6_9._GridV169">
 <summary>
 GridV169 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:fitness.v_1_6_9._hiddenID">
+<summary>
+hiddenID control.
 </summary>
 <remarks>
 Auto-generated field.

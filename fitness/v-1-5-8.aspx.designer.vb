@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class v_1_5_8
-
+    
     '''<summary>
     '''lblMessage control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class v_1_5_8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblMessage As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''GridV115 control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class v_1_5_8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents GridV115 As Global.System.Web.UI.WebControls.GridView
-
+    
     '''<summary>
     '''lblTypeOfMed control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class v_1_5_8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblTypeOfMed As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtTypeOfMedi control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class v_1_5_8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtTypeOfMedi As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblEffects control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class v_1_5_8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblEffects As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtEffets control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class v_1_5_8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtEffets As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblRec control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class v_1_5_8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblRec As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtRecommand control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class v_1_5_8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtRecommand As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''btnSubmit control.
     '''</summary>
@@ -93,4 +93,13 @@ Partial Public Class v_1_5_8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnSubmit As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''hiddenId control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents hiddenId As Global.System.Web.UI.WebControls.HiddenField
 End Class

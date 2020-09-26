@@ -14,8 +14,8 @@
         </div>
         <hr />
         <div class="row" style="padding-left:50px;">
-
-            <asp:GridView ID="GridV115" AutoGenerateColumns="false" CssClass="table table-bordered table-sm" runat="server">
+            <div class="col-sm-12">
+                <asp:GridView ID="GridV115" ClientIDMode="Static" AutoGenerateColumns="false" CssClass="table table-bordered table-sm" runat="server">
                 <Columns>
                     <asp:TemplateField HeaderText="Name">
                         <ItemTemplate>
@@ -29,11 +29,16 @@
                     <asp:BoundField DataField="createdon" HeaderText="Submited On" />
                     <asp:TemplateField HeaderText="Print">
                         <ItemTemplate>
-                            <asp:LinkButton ID="lnkPrint" ToolTip="click to print"  CommandArgument='<%#Eval("id") %>' runat="server" OnClick="lnkPrint_Click" > <i class="fa fa-print"></i> </asp:LinkButton>
+                            <asp:LinkButton ID="lnkPrint" ToolTip="click to print"  CommandArgument='<%#Eval("id") %>' runat="server" OnClick="lnkPrint_Click" > <i class="fa fa-print"></i> </asp:LinkButton> ||
+                             <asp:LinkButton ID="lnkEdit" ToolTip="click to print"  CommandArgument='<%#Eval("id") %>' runat="server" OnClick="lnkEdit_Click" > <i class="fa fa-edit"></i> </asp:LinkButton> ||
+                            <a href="#" class="del" style="color:red" data-val='<%#Eval("id") %>' title="click to delete" ><i class="fa fa-trash"></i></a>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
+            </div>
+
+            
 
         </div>
     </div>
@@ -94,7 +99,7 @@ Release Form</h5>
   </div>
 </div>
 
-
+    <asp:HiddenField ID="hiddenId" runat="server" />
     <script type="text/javascript">
     function HideLabel() {
         var seconds = 5;
@@ -102,6 +107,61 @@ Release Form</h5>
             document.getElementById("<%=lblMessage.ClientID %>").style.display = "none";
         }, seconds * 1000);
     };
+
+
+
+        function showModal() {
+            $('.bd-example-modal-lg').modal();
+        }
+
+
+        $('#GridV115 .del').on('click', function () {
+            var button = $(this);
+
+            bootbox.confirm({
+                message: "Are you really want to delete?",
+                buttons: {
+                    confirm: {
+                        label: 'Yes',
+                        className: 'btn-success'
+                    },
+                    cancel: {
+                        label: 'No',
+                        className: 'btn-danger'
+                    }
+                },
+                callback: function (result) {
+                    console.log('This was logged in the callback: ' + result);
+
+                    if (result) {
+                         DeleteData(button.attr('data-val'));
+                    }
+                }
+            });
+
+        });
+
+
+
+        function DeleteData(id) {
+            $.ajax({
+                type: "POST",
+                url: "V-1-5-8.aspx/DeleteV137",
+                data: '{id : "' + id + '"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    window.setTimeout(function () { window.location.reload() }, 500)
+                    //alert(res);
+
+
+
+
+                }
+            });
+        };
+
+
     </script>
 
 

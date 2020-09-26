@@ -102,12 +102,21 @@ Public Class V_1_3_7
         If (Session("Email") = "") Then
             Response.Redirect("Login.aspx")
         Else
+            Dim _Id As Long = 0
+            Dim _action As String = Nothing
             Dim result As Boolean = False
 
-            result = V137function(0, "INSERT")
+            If (btnSubmit.Text = "SAVE") Then
+                _action = "INSERT"
+            ElseIf (btnSubmit.Text = "UPDATE")
+                _Id = hiddenId.Value
+                _action = "UPDATE"
+            End If
+
+            result = V137function(_Id, _action)
             If (result) Then
                 lblMessage.Visible = True
-                ClientScript.RegisterStartupScript(Me.[GetType](), "alert", "HideLabel();", True)
+                ClientScript.RegisterStartupScript(Me.[GetType](), "alert", "HideLabel(); reload();", True)
                 lblMessage.CssClass = "badge badge-success"
                 lblMessage.Text = "Your data has been saved."
             End If
@@ -116,7 +125,7 @@ Public Class V_1_3_7
 
     Private Function SaveQFive(ByVal _137Id As String) As Boolean
         Dim res As Boolean = False
-        If (GridQ5.Rows.Count > 0) Then
+        If (GridQ5.Rows.Count > 1) Then
 
             For Each row As GridViewRow In Me.GridQ5.Rows
                 If (row.RowType = DataControlRowType.DataRow) Then
@@ -158,7 +167,7 @@ Public Class V_1_3_7
 
     Private Function SaveQ15(ByVal _137Id As String) As Boolean
         Dim res As Boolean = False
-        If (GridQ15.Rows.Count > 0) Then
+        If (GridQ15.Rows.Count > 1) Then
 
             For Each row As GridViewRow In Me.GridQ15.Rows
                 If (row.RowType = DataControlRowType.DataRow) Then
@@ -306,7 +315,7 @@ Public Class V_1_3_7
                 cmd.Parameters.AddWithValue("@WeightInc", txtPosi.Text)
                 cmd.Parameters.AddWithValue("@WeightDec", txtNeg.Text)
                 cmd.Parameters.AddWithValue("@loginUser", Session("Email").ToString())
-                cmd.Parameters.AddWithValue("@action", "INSERT")
+                cmd.Parameters.AddWithValue("@action", action)
                 cmd.Parameters.AddWithValue("@v137Id", 0)
                 cmd.Parameters("@v137Id").Direction = ParameterDirection.Output
 
@@ -318,6 +327,11 @@ Public Class V_1_3_7
 
                 v137Id = cmd.Parameters("@v137Id").Value
                 hiddenv137Id.Value = v137Id
+
+                If (action = "UPDATE") Then
+                    Dim _Gen As New GenericClass
+                    _Gen.SaveData("Delete from v137Transactions where v137id = '" & id & "'")
+                End If
 
                 SaveQFive(hiddenv137Id.Value)
                 SaveQ14(hiddenv137Id.Value)
@@ -386,7 +400,7 @@ Public Class V_1_3_7
                             ddmExeWorkJob.SelectedItem.Text = RDR.Item("ExeBenefitJob").ToString()
                             txtPosi.Text = RDR.Item("WeightInc").ToString()
                             txtNeg.Text = RDR.Item("WeightDec").ToString()
-
+                            btnSubmit.Text = "UPDATE"
                         Loop
                     End If
                 End Using
@@ -562,4 +576,36 @@ Public Class V_1_3_7
 
         End Using
     End Sub
+
+
+
+
+    <System.Web.Services.WebMethod()>
+    Public Shared Function DeleteV137(ByVal id As String) As String
+        Dim result As String = Nothing
+        Dim tbl1 As Boolean = False
+        Dim tbl2 As Boolean = False
+        Dim Gen As New GenericClass
+        Dim cmd As New SqlCommand
+
+        cmd.CommandText = "Delete from v137Transactions where v137id = @id"
+        cmd.Parameters.AddWithValue("@id", id)
+        cmd.CommandType = CommandType.Text
+        tbl1 = Gen.SaveDataFromCmd(cmd)
+        If (tbl1) Then
+            Dim cmd2 As New SqlCommand
+            cmd2.CommandText = "delete from v137 where id = @id"
+            cmd2.Parameters.AddWithValue("@id", id)
+            cmd2.CommandType = CommandType.Text
+            tbl2 = Gen.SaveDataFromCmd(cmd2)
+        End If
+
+        If (tbl2) Then
+            result = "Success"
+        Else
+            result = "Error"
+        End If
+
+        Return result
+    End Function
 End Class

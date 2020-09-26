@@ -15,7 +15,7 @@
         <hr style="border:2px solid #343a40;" />  
         <div class="row" style="padding-left:20px;">
             <div class="col-sm-12">
-                <asp:GridView ID="GridV169" runat="server" CssClass="table table-bordered" AutoGenerateColumns="false">
+                <asp:GridView ID="GridV169" ClientIDMode="Static" runat="server" CssClass="table table-bordered table-striped table-sm" AutoGenerateColumns="false">
                     <Columns>
                         <asp:TemplateField HeaderText="Sr. No">
                             <ItemTemplate>
@@ -29,11 +29,16 @@
                         
                           <asp:TemplateField HeaderText="Action">
                             <ItemTemplate>
-                                <asp:LinkButton ID="lnkPrint" CommandArgument='<%#Eval("Id") %>' OnClick="lnkPrint_Click"  runat="server"><i class="fa fa-print"></i></asp:LinkButton>
+                                <asp:LinkButton ID="lnkPrint" CommandArgument='<%#Eval("Id") %>' OnClick="lnkPrint_Click"  runat="server"><i class="fa fa-print"></i></asp:LinkButton> ||
+                                 <asp:LinkButton ID="lnkEdit" CommandArgument='<%#Eval("Id") %>' OnClick="lnkEdit_Click"   runat="server"><i class="fa fa-edit"></i></asp:LinkButton> ||
+                                <a href="#" class="del" style="color:red" data-val='<%#Eval("id") %>' title="click to delete" ><i class="fa fa-trash"></i></a>
+                            
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
+
+                <asp:HiddenField ID="hiddenID" runat="server" />
             </div>
         </div>
     </div>
@@ -500,7 +505,59 @@
         setTimeout(function () {
             document.getElementById("<%=lblMessage.ClientID %>").style.display = "none";
         }, seconds * 1000);
-    };
+         };
+
+
+        function showModal() {
+            $('.bd-example-modal-lg').modal();
+        }
+
+
+
+        $('#GridV169 .del').on('click', function () {
+            var button = $(this);
+
+            bootbox.confirm({
+                message: "Are you really want to delete?",
+                buttons: {
+                    confirm: {
+                        label: 'Yes',
+                        className: 'btn-success'
+                    },
+                    cancel: {
+                        label: 'No',
+                        className: 'btn-danger'
+                    }
+                },
+                callback: function (result) {
+                    console.log('This was logged in the callback: ' + result);
+
+                    if (result) {
+                        DeleteData(button.attr('data-val'));
+                    }
+                }
+            });
+        });
+
+
+
+        function DeleteData(id) {
+            $.ajax({
+                type: "POST",
+                url: "V-1-6-9.aspx/DeleteV137",
+                data: '{id : "' + id + '"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    window.setTimeout(function () { window.location.reload() }, 500)
+                    //alert(res);
+
+
+
+
+                }
+            });
+        };
 
     </script>
 

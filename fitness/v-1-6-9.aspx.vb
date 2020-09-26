@@ -24,8 +24,18 @@ Public Class v_1_6_9
             Response.Redirect("Login.aspx")
         Else
             Dim result As Boolean = False
-            result = V169function(0, "INSERT")
+            Dim _action As String = Nothing
+
+            If (btnSubmitFrm.Text = "Submit") Then
+                _action = "INSERT"
+
+            ElseIf (btnSubmitFrm.Text = "UPDATE")
+                _action = "UPDATE"
+            End If
+
+            result = V169function(hiddenID.Value, _action)
             If (result) Then
+                btnSubmitFrm.Text = "Submit"
                 BindGrid()
                 lblMessage.Visible = True
                 ClientScript.RegisterStartupScript(Me.[GetType](), "alert", "HideLabel();", True)
@@ -42,6 +52,7 @@ Public Class v_1_6_9
         Dim result As Boolean = False
         Dim query As String = "sp_v169"
         Dim constr As String = ConfigurationManager.ConnectionStrings("connStr").ConnectionString
+
 
         Using con As SqlConnection = New SqlConnection(constr)
             Using cmd As SqlCommand = New SqlCommand(query)
@@ -99,6 +110,10 @@ Public Class v_1_6_9
                     sda.Fill(dt)
                     GridV169.DataSource = dt
                     GridV169.DataBind()
+                    If (GridV169.Rows.Count > 0) Then
+                        GridV169.UseAccessibleHeader = True
+                        GridV169.HeaderRow.TableSection = TableRowSection.TableHeader
+                    End If
                 End Using
             End Using
         End Using
@@ -112,4 +127,100 @@ Public Class v_1_6_9
         Dim s As String = "window.open('" & url + "', 'popup_window', 'width=1080,height=720,left=100,top=100,resizable=yes');"
         ClientScript.RegisterStartupScript(Me.GetType(), "script", s, True)
     End Sub
+
+    Protected Sub lnkEdit_Click(sender As Object, e As EventArgs)
+        Dim v169Id As String = TryCast(sender, LinkButton).CommandArgument
+        hiddenID.Value = v169Id
+        bindDataForEdit(v169Id)
+        btnSubmitFrm.Text = "UPDATE"
+        ClientScript.RegisterStartupScript(Me.[GetType](), "alert", "showModal();", True)
+    End Sub
+
+
+
+    Private Sub bindDataForEdit(ByVal _id As String)
+
+        Dim constring As String = ConfigurationManager.ConnectionStrings("connStr").ConnectionString
+        Using con As New SqlConnection(constring)
+            Using cmd As New SqlCommand("SELECT V.id, C.name, V.* FROM V169 AS V INNER JOIN CustomerMaster AS C ON V.empEmail = C.email WHERE V.id = '" & _id & "'", con)
+
+                cmd.CommandType = CommandType.Text
+                con.Open()
+                Dim dr As SqlDataReader = cmd.ExecuteReader
+
+                If (dr.HasRows) Then
+                    While (dr.Read())
+                        '  lblName.Text = dr("name").ToString()
+                        txtRestHr.Text = dr("EssRestingHR").ToString()
+                        txtExeHR.Text = dr("EssExerciseHR").ToString()
+                        txtHRDate.Text = dr("EssHRDate").ToString()
+                        ConvertToDtFormat(txtHRDate)
+                        'If (txtHRDate.Text <> "") Then
+                        '    Dim hrDt As Date = txtHRDate.Text
+                        '    txtHRDate.Text = hrDt.ToString("dd-MM-yyyy")
+                        'End If
+                        txtHRDate.Enabled = False
+                        txtRestingBP.Text = dr("EssRestingBP").ToString()
+
+                        txtBpDate.Text = dr("EssRestingBPDate").ToString()
+                        txtBCADate.Text = dr("BCADate").ToString()
+                        ConvertToDtFormat(txtBpDate)
+                        ConvertToDtFormat(txtBCADate)
+
+
+                        txtWeightIB.Text = dr("WeightIb").ToString()
+                        txtHeightIN.Text = dr("HeightIn").ToString()
+                        txtWeightkg.Text = dr("WeightKg").ToString()
+                        txtHeightm.Text = dr("HeightM").ToString()
+                        txtBMI.Text = dr("BCABMI").ToString()
+                        txtMenCest.Text = dr("SKMmenChest").ToString()
+                        txtMenAbdomen.Text = dr("SKMmenAbdomen").ToString()
+                        txtMenThigh.Text = dr("SKMmenThigh").ToString()
+                        txtMenTotal.Text = dr("SKMmenTotal").ToString()
+                        txtWomenTriceps.Text = dr("SKMwomenTriceps").ToString()
+                        txtWomenSuprailium.Text = dr("SKMwomenSuprailium").ToString()
+                        txtWomenThigh.Text = dr("SKMwomenThigh").ToString()
+                        txtWomenTotal.Text = dr("SKMwomenTotal").ToString()
+                        txtfatBodyEstimation.Text = dr("SKMBodyFatEst").ToString()
+                        txtSKMDate.Text = dr("SKMDate").ToString()
+                        ConvertToDtFormat(txtSKMDate)
+                        txtGMDate.Text = dr("GMDate").ToString()
+                        ConvertToDtFormat(txtGMDate)
+                        txtAbdomen.Text = dr("GMAbdomen").ToString()
+                        txtHip.Text = dr("GMHip").ToString()
+                        txtWaist.Text = dr("GMWaist").ToString()
+                        txtRaioWH.Text = dr("GMWaistToHipRatio").ToString()
+
+                    End While
+                End If
+                con.Close()
+
+            End Using
+        End Using
+
+    End Sub
+
+    Public Sub ConvertToDtFormat(ByVal _txtControl As TextBox)
+        If (_txtControl.Text <> "") Then
+            Dim hrDt As Date = _txtControl.Text
+            _txtControl.Text = hrDt.ToString("dd-MM-yyyy")
+        End If
+    End Sub
+
+    <System.Web.Services.WebMethod()>
+    Public Shared Function DeleteV137(ByVal id As String) As String
+        Dim result As String = Nothing
+        Dim tbl1 As Boolean = False
+        Dim tbl2 As Boolean = False
+        Dim Gen As New GenericClass
+        Dim cmd As New SqlCommand
+
+        cmd.CommandText = "Delete from V169 where id =  @id"
+        cmd.Parameters.AddWithValue("@id", id)
+        cmd.CommandType = CommandType.Text
+        tbl1 = Gen.SaveDataFromCmd(cmd)
+        result = "Success"
+
+        Return result
+    End Function
 End Class

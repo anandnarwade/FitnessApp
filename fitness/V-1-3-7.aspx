@@ -180,13 +180,21 @@
                             <asp:TemplateField HeaderText="Sr.No">
                                 <ItemTemplate>
                                     <%# Container.DataItemIndex + 1 %>
-                                    <asp:Label ID="lblQId" runat="server" Text='<%#Eval("id") %>' Visible="false" ></asp:Label>
+                                   
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:BoundField DataField="question" HeaderText="Question" />
+
+                            <asp:TemplateField HeaderText="question">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblquestion" runat="server" Text='<%#Eval("question") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            
+                            
                             <asp:TemplateField HeaderText="1">
                                 <ItemTemplate>
                                     <div class="form-check">
+                                         <asp:Label ID="lblQId" runat="server" Text='<%#Eval("id") %>' Visible="false" ></asp:Label>
                                         <asp:RadioButton GroupName="Q5" ID="RdoOp1" CssClass="form-check-input" runat="server" />
 
                                         <asp:Label ID="lblop1" runat="server" CssClass="form-check-label" AssociatedControlID="RdoOp1" Text=""></asp:Label>
@@ -496,7 +504,7 @@ Use the following scale to rate each goal separately.
                              <asp:TemplateField HeaderText="Sr.No">
                                 <ItemTemplate>
                                     <%# Container.DataItemIndex + 1 %>
-                                    <asp:Label ID="lblQId" runat="server" Text='<%#Eval("id") %>' Visible="false" ></asp:Label>
+                                  
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:BoundField DataField="question" HeaderText="Question" />
@@ -504,6 +512,7 @@ Use the following scale to rate each goal separately.
                             <asp:TemplateField HeaderText="1">
                                 <ItemTemplate>
                                     <div class="form-check">
+                                          <asp:Label ID="lblQId" runat="server" Text='<%#Eval("id") %>' Visible="false" ></asp:Label>
                                         <asp:RadioButton GroupName="Q15" ID="RdoOp1" CssClass="form-check-input" runat="server" />
 
                                         <asp:Label ID="lblop1" runat="server" CssClass="form-check-label" AssociatedControlID="RdoOp1" Text=""></asp:Label>
@@ -661,5 +670,53 @@ Use the following scale to rate each goal separately.
         }
 
 
+
+        $('#GridV137 .del').on('click', function () {
+            var id = $(this).attr("data-val");
+            bootbox.confirm({
+                message: "Are you really want to delete?",
+                buttons: {
+                    confirm: {
+                        label: 'Yes',
+                        className: 'btn-success'
+                    },
+                    cancel: {
+                        label: 'No',
+                        className: 'btn-danger'
+                    }
+                },
+                callback: function (result) {
+                    console.log('This was logged in the callback: ' + result);
+
+                    if (result) {
+                        DeleteData(id);
+                        //console.log(id);
+                    }
+                }
+            });
+        })
+
+
+        function DeleteData(id) {
+            $.ajax({
+                type: "POST",
+                url: "V-1-3-7.aspx/DeleteV137",
+                data: '{id : "' + id + '"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    window.setTimeout(function () { window.location.reload() }, 500)
+                    //alert(res);
+
+
+
+
+                }
+            });
+        };
+
+        function reload() {
+            window.setTimeout(function () { window.location.reload() }, 500)
+        }
     </script>
 </asp:Content>

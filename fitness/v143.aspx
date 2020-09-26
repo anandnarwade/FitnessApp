@@ -15,8 +15,8 @@
         </div>
         <hr />
         <div class="row" style="padding-left:50px;">
-
-            <asp:GridView ID="GrdV143" AutoGenerateColumns="false" CssClass="table table-bordered table-sm" runat="server">
+            <div class="col-sm-12">
+                <asp:GridView ID="GrdV143" ClientIDMode="Static" AutoGenerateColumns="false" CssClass="table table-bordered table-sm" runat="server">
                 <Columns>
                     <asp:TemplateField HeaderText="Name">
                         <ItemTemplate>
@@ -29,12 +29,17 @@
                     <asp:BoundField DataField="createdon" HeaderText="Submited On" />
                     <asp:TemplateField HeaderText="Print">
                         <ItemTemplate>
-                            <asp:LinkButton ID="lnkPrint" ToolTip="click to print"  CommandArgument='<%#Eval("id") %>' runat="server" OnClick="lnkPrint_Click"   > <i class="fa fa-print"></i> </asp:LinkButton>
+                            <asp:LinkButton ID="lnkPrint" ToolTip="click to print"  CommandArgument='<%#Eval("id") %>' runat="server" OnClick="lnkPrint_Click"   > <i class="fa fa-print"></i> </asp:LinkButton> ||
+                            <asp:LinkButton ID="lnkEdit" ToolTip="Click to edit"  CommandArgument='<%#Eval("id") %>' runat="server" OnClick="lnkEdit_Click"  ><i class="fa fa-edit"></i> </asp:LinkButton> ||
+                            <a href="#" class="del" style="color:red" data-val='<%#Eval("id") %>' title="click to delete" ><i class="fa fa-trash"></i></a>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
 
+            </div>
+
+            
         </div>
     </div>
 
@@ -65,15 +70,15 @@
                             <asp:TemplateField HeaderText="Yes">
                                 <ItemTemplate>
                                     <asp:Label ID="lblId" runat="server" Text='<%#Eval("id") %>' Visible="false"></asp:Label>
-                                    <asp:RadioButton ID="RdoYes_" GroupName="Ans" runat="server" />
-                                    <asp:Label ID="lblYes" runat="server" AssociatedControlID="RdoYes_"></asp:Label>
+                                    <asp:RadioButton ID="RdoYes" GroupName="Ans" runat="server" />
+                                    <asp:Label ID="lblYes" runat="server" AssociatedControlID="RdoYes"></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
 
                             <asp:TemplateField HeaderText="No">
                                 <ItemTemplate>
-                                    <asp:RadioButton ID="RdoNo_" GroupName="Ans" runat="server" />
-                                    <asp:Label ID="lblNo" runat="server" AssociatedControlID="RdoNo_"></asp:Label>
+                                    <asp:RadioButton ID="RdoNo" GroupName="Ans" runat="server" />
+                                    <asp:Label ID="lblNo" runat="server" AssociatedControlID="RdoNo"></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:BoundField DataField="question" HeaderText="Questions" />
@@ -98,6 +103,38 @@
             document.getElementById("<%=lblMessage.ClientID %>").style.display = "none";
         }, seconds * 1000);
     };
+
+
+
+        function showModal() {
+            $('.bd-example-modal-lg').modal();
+        };
+
+
+        $('#GrdV143 .del').on('click', function () {
+            var id = $(this).attr('data-val');
+            DeleteData(id);
+        });
+
+
+        function DeleteData(id) {
+            $.ajax({
+                type: "POST",
+                url: "v143.aspx/DeleteV137",
+                data: '{id : "' + id + '"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    window.setTimeout(function () { window.location.reload() }, 500)
+                    //alert(res);
+
+
+
+
+                }
+            });
+        };
+
     </script>
 
 </asp:Content>
