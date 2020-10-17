@@ -38,7 +38,10 @@
                 <div class="card-body">
                     <div class="row text-center" style="text-align:center;">
                         
-                    <img class="img-fluid" src="banner/1.jpg" />
+                    <%--<img class="img-fluid" src="banner/1.jpg" />--%>
+                        <%--<iframe  src="https://www.youtube.com/embed/IwKKtGNYGMQ" width="420" height="315" frameborder="0" allowfullscreen></iframe>--%>
+                         <iframe  src=<%= bodyCombot %>  frameborder="0" allowfullscreen></iframe>
+       
                     </div>
                     <hr />
                     <div class="row">
@@ -57,7 +60,8 @@
                 <div class="card-body">
                     <div class="row text-center" style="text-align:center;">
                         
-                    <img class="img-fluid" src="banner/2.jpg" />
+                    <%--<img class="img-fluid" src="banner/2.jpg" />--%>
+                        <iframe  src=<%= yoga %>  frameborder="0" allowfullscreen></iframe>
                     </div>
                      <hr />
                     <div class="row">
@@ -78,7 +82,8 @@
                     <div class="row text-center" style="text-align:center;">
                         
                     
-                        <img class="img-fluid" src="banner/3.jpg" />
+                        <%--<img class="img-fluid" src="banner/3.jpg" />--%>
+                        <iframe  src=<%= zumba %>  frameborder="0" allowfullscreen></iframe>
                     
                     </div>
                      <hr />
@@ -94,4 +99,22 @@
         </div>
     </div>
    
+
+    
+<script type="text/javascript">
+    function ShowModalPopup() {
+     
+        var url = "https://www.youtube.com/watch?v=V4dkH9r-uU8"
+        url = url.split('v=')[1];
+        $get("video").src = "//www.youtube.com/embed/" + url
+        $find("mpe").show();
+        return false;
+    }
+    function HideModalPopup() {
+        $get("video").src = "";
+        $find("mpe").hide();
+        return false;
+    }
+</script>
+
 </asp:Content>

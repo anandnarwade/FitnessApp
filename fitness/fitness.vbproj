@@ -552,6 +552,7 @@
     <Content Include="v-1-6-9.aspx" />
     <Content Include="v1-1-5.aspx" />
     <Content Include="v143.aspx" />
+    <Content Include="VideoGallary.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -727,6 +728,13 @@
     </Compile>
     <Compile Include="v143.aspx.vb">
       <DependentUpon>v143.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="VideoGallary.aspx.designer.vb">
+      <DependentUpon>VideoGallary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VideoGallary.aspx.vb">
+      <DependentUpon>VideoGallary.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>

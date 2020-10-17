@@ -72,7 +72,8 @@
             <a class="dropdown-item" href="MembersListFrm.aspx">Members</a>
             <%--<a class="dropdown-item" href="#">V1-3-7</a>--%>
             <a class="dropdown-item" href="CompanyMasterFrm.aspx">Company</a>
-            <a class="dropdown-item" href="SpocMasterfrm.aspx">SPOC</a>
+            <%--<a class="dropdown-item" href="SpocMasterfrm.aspx">SPOC</a>--%>
+            <a class="dropdown-item" href="VideoGallary.aspx">Video Gallary</a>
             <%--<a class="dropdown-item" href="#">V1-6-9</a>
           <div class="dropdown-divider"></div>--%>
           
